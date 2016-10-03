@@ -11,10 +11,9 @@ function minuscule($str){
 }
 
 function majPrenom($str){
-	$prenom = ucfirst($str);
+ 	$prenom = ucfirst($str);
 	return $prenom;
 }
-
 
 function enleverEspaces($str){
 	$str = preg_replace('/\s{2,}/', ' ', $str);
@@ -32,15 +31,33 @@ function enleverEspacesInutiles($str){
 	return $str;
 }
 
+function majusculesPrenomCompose($str){
+	$total=strlen($str); // taille de la chaine
+	echo 'JAJ : ' . $str[0];
+	$str[0] = enleverAccents($str[0]);
+	echo enleverAccents($str[0]);
+	$str[0] = strtoupper($str[0]);
+	for ($i=1 ; $i < $total-1; $i++) { //pour tous les caractères de la chaine (sauf la dernière $total-1, et la première qui est déjà fait)
+    	if (($str[$i] == " ") || ($str[$i] == "-") || ($str[$i] == "'")) { //si le caractère est " " ou "-"
+    		$str[$i+1] = enleverAccents($str[$i+1]);
+        	$str[$i+1] = ucwords($str[$i+1]); //on met en caps le carctère qui suit
+        	$i++; //on saute le caractère qu'on vient de mettre en caps
+    	}else{
+    		$str[$i] = strtolower($str[$i]);
+    	}
+	}
+	return $str;
+}
+
 function prenomCompose($str){
-	$str = mb_convert_case($str, MB_CASE_TITLE);
+	$str = majusculesPrenomCompose($str);
 	$str = enleverEspacesInutiles($str);
 	return $str;
 }
 
 //Retirer les accents
-function enleverAccents($str)
-{
+function enleverAccents($str){
+
     $str = preg_replace('#Ç#', 'C', $str);
     $str = preg_replace('#ç#', 'c', $str);
     $str = preg_replace('#è|é|ê|ë#', 'e', $str);
@@ -72,20 +89,16 @@ function verifierFrancais($str){
     	return false;
     }
 }
-
 function verifierTypePrenom($str){
-	$flag;
 	if(preg_match('# #',$str) || preg_match('#-#', $str) || preg_match('#\'#', $str)){
 		return 'compose';
 	}else{
 		return 'normal';
 	}
-
 }
 
-function enleverTiretDebut($str)
-{
-	$str = enleverToutEspaces($str);
+function enleverTiretDebut($str){
+	//$str = enleverEspaces($str);
 	$PremierCaractere = substr($str,0,1);
 
 	while (strcmp($PremierCaractere, "-")==0) {
@@ -94,10 +107,8 @@ function enleverTiretDebut($str)
 	}
 	return $str;
 }
-
-function enleverTiretFin($str)
-{
-	$str = enleverToutEspaces($str);
+function enleverTiretFin($str){
+	//$str = enleverToutEspaces($str);
 	$DernierCaractere = substr($str,-1,1);
 
 	while (strcmp($DernierCaractere, "-")==0) {
@@ -107,13 +118,50 @@ function enleverTiretFin($str)
 	return $str;
 }
 
+
+function enleverEspaceDebut($str){
+	$PremierCaractere = substr($str,0,1);
+
+	while (strcmp($PremierCaractere, " ")==0) {
+		$str = substr($str,1);	//supprime le premier caractère
+		$PremierCaractere = substr($str,0,1); //stock le nouveau premier caractère
+	}
+	return $str;
+}
+function enleverEspaceFin($str){
+	$DernierCaractere = substr($str,-1,1);
+
+	while (strcmp($DernierCaractere, " ")==0) {
+		$str = substr($str,0,-1);	//supprime le dernier caractère
+		$DernierCaractere = substr($str,-1,1); //stock le nouveau premier caractère
+	}
+	return $str;
+}
+
+function enleverElementDebut($str){
+	while(strcmp(substr($str,0,1), " ")==0 || strcmp(substr($str,0,1), "-")==0){
+		$str = enleverTiretDebut($str);
+		$str = enleverEspaceDebut($str);
+	}
+	return $str;
+}
+
+
+function enleverElementFin($str){
+	while(strcmp(substr($str,-1,1), " ")==0 || strcmp(substr($str,-1,1), "-")==0){
+		$str = enleverTiretFin($str);
+		$str = enleverEspaceFin($str);
+	}
+	return $str;
+}
+
 function unTiretMax($str){
 	for ($i=0; $i < strlen($str); $i++) { 
 		$str = preg_replace('#--#', '-', $str);	
+		$str = preg_replace('#- -#', '--', $str);
 	}
 	return $str;
 }	
-
 function deuxTiretMax($str){
 	while (substr_count($str, "-")>2) { 
 		$str = preg_replace('#--#', '-', $str);
@@ -121,7 +169,6 @@ function deuxTiretMax($str){
 	}
 	return $str;
 }
-
 function unApostropheMax($str){
 	for ($i=0; $i < strlen($str); $i++) { 
 		$str = preg_replace('#\'\'#', '\'', $str);	
@@ -129,19 +176,18 @@ function unApostropheMax($str){
 	return $str;
 }	
 
-
 function formaterPrenom($str){
 	if(verifierFrancais($str)){
 		$str = enleverEspaces($str);
+		$str = unTiretMax($str);
+		$str = unApostropheMax($str);
+		$str = enleverElementDebut($str);
+		$str = enleverElementFin($str);
 		if(verifierTypePrenom($str) =='compose'){
 			$str = prenomCompose($str);
 		}else{
 			$str = majPrenom($str);
 		}
-		$str = unTiretMax($str);
-		$str = unApostropheMax($str);
-		$str = enleverTiretFin($str);
-		$str = enleverTiretDebut($str);
 		return $str;
 	}else{
 		return "NON CONFORME";
@@ -150,12 +196,14 @@ function formaterPrenom($str){
 
 function formaterNom($str){
 	if(verifierFrancais($str)){
+		$str = enleverEspaces($str);
+		$str = unTiretMax($str);
+		$str = unApostropheMax($str);
+		$str = enleverElementDebut($str);
+		$str = enleverElementFin($str);
 		$str = enleverAccents($str);
 		$str = majuscule($str);
-		$str = deuxTiretMax($str);
-		$str = unApostropheMax($str);
-		$str = enleverTiretFin($str);
-		$str = enleverTiretDebut($str);
+		$str = enleverEspacesInutiles($str);
 		return $str;
 	}else{
 		return "NON CONFORME";

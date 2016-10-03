@@ -1,11 +1,14 @@
 <?php
 
-include('fonctions.php');
+include('formatage.php');
 
-$str ='fkjfrbebfoe --   ---    ----- fzefez';
-$nom ='dédàdèdù';
+
+$str ='ffze  - ---- fez fezfze fez';
+$nom ='    ----- - -- - éz --- ------ -    -------  fnzoejfnpez ';
 $str = formaterPrenom($str);
 $nom = formaterNom($nom);
-echo $str . '  ' . $nom;
+echo '<PRE>';
+print_r($str . '|' .$nom);
+echo '</	PRE>';
 
 ?>
