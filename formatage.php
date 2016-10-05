@@ -27,7 +27,7 @@ function formaterPrenom($str){
 function formaterNom($str){
 	if(verifierFrancais($str)){
 		$str = enleverEspaces($str);
-		$str = unTiretMax($str);
+		$str = deuxTiretMax($str);
 		$str = unApostropheMax($str);
 		$str = enleverElementDebut($str);
 		$str = enleverElementFin($str);

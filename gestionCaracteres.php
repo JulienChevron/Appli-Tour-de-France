@@ -18,7 +18,6 @@ function majPrenom($str){
 
 function majusculesPrenomCompose($str){
 	$total=strlen($str); // taille de la chaine
-	echo 'JAJ : ' . $str[0];
 	$str[0] = enleverAccents($str[0]);
 	$str[0] = strtoupper($str[0]);
 	for ($i=1 ; $i < $total-1; $i++) { //pour tous les caractères de la chaine (sauf la dernière $total-1, et la première qui est déjà fait)
