@@ -1,40 +1,3 @@
-<?php
-
-    session_set_cookie_params(600);
-	session_start();
-	date_default_timezone_set('Europe/Paris');
-function estAdmin(){
-	if(isset($_SESSION['type']) AND $_SESSION['type'] == 'admin'){
-		return true;
-	}
-	else{
-		return false;
-	}
- }
- 
- function estClub(){
-	if(isset($_SESSION['type']) AND $_SESSION['type'] == 'club'){
-		return true;
-	}
-	else{
-		return false;
-	}
- }
- 
- function afficherConnecte(){
-	if(estClub()){
-		return (isset($_SESSION['nom']))?$_SESSION['nom']:null;
-	}
-	else if (estAdmin()){
-		return 'Administrateur';
-	}
-	else{
-		return 'Invité';
-	}
- }
-	
-?>
-
 <!DOCTYPE html">
 <html lang="fr">
 
@@ -102,7 +65,37 @@ width: 636px ;
                 </a>
 			</div>
             </div>
-            <nav>
+
+            <nav class="navbar navbar-inverse" role="navigation">
+                <div id="menu" class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="../php/accueil.php">Accueil</a>
+                    </div>
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Ajout dans la base
+                        <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../php/ajoutCoureur.php">Ajouter un coureur</a></li>
+                            <li><a href="../php/ajoutSponsor.php">Ajouter un sponsor</a></li>
+                            <li><a href="#">Ajouter un lama</a></li> 
+                        </ul>
+                        </li>
+                        <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Consultation dans la base
+                        <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../php/consulterCoureur.php">Consulter les coureurs</a></li>
+                            <li><a href="#">Consulter les sponsors</a></li>
+                            <li><a href="#">Ajouter les lamas</a></li> 
+                        </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+
+            <!--<nav>
                 <ul id="menu" >
                     <li><a href="../php/accueil.php">Accueil</a></li>
                     <li><a href="../php/ajoutCoureur.php">Ajouteur un coureur</a></li>
@@ -110,17 +103,7 @@ width: 636px ;
 					<li><a href="../php/formLogIn.php">Connexion</a></li>						
 				</ul>
 
-            </nav><?php if(estClub() OR estAdmin()){ ?>
-				<form style="text-align:center; display:inline-block; position:absolute; left:70%; top:10px;" method="post" action="logOut.php">
-					<input type="submit" name="logout" id="logout" value="Déconnexion"/>
-				</form>
-				<p style="text-align:center; display:block; position:absolute; left:70%; top:0px;">
-					Connecté en tant que 
-				<strong><?php echo afficherConnecte() ?> :</strong>
-				</p>
-				
-			<?php } ?>
-				
+            </nav>-->
 				
 
 		<div id="body-conteneur">

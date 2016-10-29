@@ -35,7 +35,8 @@
                 echo $prenom . " " . $nom . " né en " . $annee_naiss . " participant pour la première fois en " . $annee_prem . "  et de nationnalité : " . $code_tdf; 
             }catch(PDOException $e){
                 $conn->rollBack();
-                die ($e->getMessage() . "\nErreur lors de l'ajout du courreur");
+                //die ($e->getMessage() . "\nErreur lors de l'ajout du courreur");
+                echo "Erreur lors de l'ajout du courreur";
             }
         }else{
             echo "Ajout du courreur impossible : Nom et/ou prénom non conforme(s)\n";
