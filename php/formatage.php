@@ -13,14 +13,17 @@ function formaterPrenom($str){
 		$str = unApostropheMax($str);
 		$str = enleverElementDebut($str);
 		$str = enleverElementFin($str);
-		if(verifierTypePrenom($str) =='compose'){
-			$str = prenomCompose($str);
+		$str = enleverCaracteresSpeciaux($str);
+		$str = minuscule($str);
+		$str = majusculesPrenom($str);
+		$str = enleverEspacesInutiles($str);
+		if (verifierReste($str)){
+			return $str;
 		}else{
-			$str = majPrenom($str);
+			return "?";
 		}
-		return $str;
 	}else{
-		return "NON CONFORME";
+		return "?";
 	}
 }
 
@@ -31,20 +34,19 @@ function formaterNom($str){
 		$str = unApostropheMax($str);
 		$str = enleverElementDebut($str);
 		$str = enleverElementFin($str);
-		$str = enleverAccents($str);
+		$str = enleverAccentsMaj($str);
+		$str = enleverAccentsMin($str);
+		$str = enleverCaracteresSpeciaux($str);
 		$str = majuscule($str);
 		$str = enleverEspacesInutiles($str);
-		return $str;
+		if (verifierReste($str)){
+			return $str;
+		}else{
+			return "?";
+		}
 	}else{
-		return "NON CONFORME";
+		return "?";
 	}
 }
-
-function prenomCompose($str){
-	$str = majusculesPrenomCompose($str);
-	$str = enleverEspacesInutiles($str);
-	return $str;
-}
-
 
 ?>

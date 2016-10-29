@@ -70,6 +70,7 @@ function enleverToutEspaces($str){
 
 function enleverEspacesInutiles($str){
 	$str = preg_replace('# - #', '-', $str);
+	$str = preg_replace('# -- #', '--', $str);
 	$str = preg_replace('# \' #', '\'', $str);
 	return $str;
 }

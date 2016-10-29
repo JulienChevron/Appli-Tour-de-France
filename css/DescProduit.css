@@ -1,0 +1,180 @@
+header
+{
+
+	text-align: left ;
+	height: 8% ;
+
+}
+body
+{
+	margin: 10px 0 ;
+	padding: 0 ;
+	text-align: center ;
+	font: 0.8em "Trebuchet MS", helvetica, sans-serif ;
+	background-image:url(../image/Accueil_bg.png);
+	background-size: 100%;
+	
+}
+
+
+
+div#conteneur
+{
+	width: 70% ;
+	margin: 0 auto ;
+	text-align: left ;
+	border: 1px solid black;
+	background: #fff ;
+}
+
+
+h1#header a
+{
+	width: 400px ;
+	height: 70px ;
+	display: block ;
+	position: relative ;
+	left: 350px ;
+	top: 15px ;
+	text-indent: -5000px ;
+}
+
+
+ul#menu
+{
+	height: 35px ;
+	margin: 0 ;
+	padding: 0 ;
+	background: SkyBlue ;
+	list-style-type: none ;
+}
+		
+ul#menu li
+{
+	float: left ;
+	text-align: center ;
+	width: 20% ;
+}
+
+ul#menu li a
+{
+	
+	line-height: 35px ;
+	font-size: 1em ;
+	font-weight: bold ;
+	letter-spacing: 2px ;
+	color: #fff ;
+	display: block ;
+	text-decoration: none ;
+	border-right: 2px solid #D6D6D2;
+}
+
+ul#menu li a:hover
+{
+	background: SteelBlue ;
+}
+
+div#contenu
+{
+	padding: 25px 25px 25px 25px ;
+	
+}
+
+
+div#contenu h3
+{
+	margin-left: 15px ;
+	padding-left: 5px ;
+	border-bottom: 1px solid #000000 ;
+	color: #999999 ;
+}
+
+div#contenu p
+{
+	text-align: center-left ;
+	text-indent: 2em ;
+	line-height: 1.7em ;
+	font-size: 1.2em 
+}
+
+div#contenu a
+{
+	color: #000000 ;
+}
+
+div#contenu a:hover
+{
+	color: #9b2 ;
+}
+
+footer
+{
+	margin: 0 ;
+	padding-left: 20px ;
+	padding-right: 20px ;
+	line-height: 30px ;
+	text-align: left ;
+	color: #A1A1A1 ;
+	border: 1px solid black;
+}
+  .carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 100%;
+      margin: auto;
+  }
+  .carousel-page
+{
+width:100%;
+height:30%;
+background-color:SteelBlue;
+}
+  
+  form {
+ padding:10px;
+ }
+fieldset {
+ padding:0 20px 20px 20px;
+ margin-bottom:10px;
+ border:1px solid AliceBlue;
+ }
+legend {
+ color:AliceBlue;
+ font-weight:bold
+ }
+label {
+ margin-top:10px;
+ display:block;
+ }
+label.inline {
+ display:inline;
+ margin-right:50px;
+ }
+input, textarea, select, option {
+ background-color:AliceBlue;
+ }
+input, textarea, select {
+ padding:3px;
+ border:1px solid SteelBlue;
+ border-radius:5px;
+ width:200px;
+ box-shadow:1px 1px 2px SteelBlue inset;
+ }
+select {
+ margin-top:10px;
+ }
+input[type=radio] {
+ background-color:transparent;
+ border:none;
+ width:10px;
+ }
+input[type=submit], input[type=reset] {
+ width:100px;
+ margin-left:5px;
+ box-shadow:1px 1px 1px SteelBlue;
+ cursor:pointer;
+ }
+ 
+ div#contenu masqueImg
+ {
+	text-align:center;
+ }
