@@ -22,7 +22,7 @@
         }
 
         if(isset($_POST['Envoyer'])){
-            include('ajoutCoureurFonc.php');
+            include('ajoutSponsorFonc.php');
         }
     ?>
 
