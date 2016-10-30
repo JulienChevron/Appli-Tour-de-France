@@ -8,8 +8,11 @@
         if(isset($_POST['nom'])){
             $n_equipe = $_POST['n_equipe'];
         }
-        if (isset($_POST['na_sponsor'])){
+        if (isset($_POST['nom'])){
             $nom = $_POST['nom'];
+        }
+        if (isset($_POST['na_sponsor'])){
+            $na_sponsor = $_POST['na_sponsor'];
         }
         if (isset($_POST['annee_sponsor'])){
             $annee_sponsor = $_POST['annee_sponsor'];
@@ -17,12 +20,12 @@
         if (isset($_POST['code_tdf'])){
             $code_tdf = $_POST['code_tdf'];
         }
-        if (isset($_POST['n_equipe']) && isset($_POST['nom']) && isset($_POST['na_sponsor']) && isset($_POST['annee_sponsor']) && isset($_POST['code_tdf']) && isset($_POST['Envoyer']) && ( strcmp($nom,"?") != 0 ){
+        if (isset($_POST['n_equipe']) && isset($_POST['nom']) && isset($_POST['na_sponsor']) && isset($_POST['annee_sponsor']) && isset($_POST['code_tdf']) && isset($_POST['Envoyer']) && ( strcmp($nom,"?") != 0 )){
 
             $n_sponsor = "select max(n_sponsor)+1 from TDF_SPONSOR";
         
-            $sql = "INSERT INTO TDF_SPONSOR ( N_SPONSOR, N_EQUIPE, NOM, NA_SPONSOR, ANNEE_SPONSOR,  CODE_TDF,  COMPTE_ORACLE, DATE_INSERT)
-                values ((".$n_sponsor."), '".$n_equipe."', '".$nom."', '".$na_sponsor."', '".$annee_sponsor."', '".$code_tdf."', USER , sysdate)";
+            $sql = "INSERT INTO TDF_SPONSOR ( N_EQUIPE, N_SPONSOR, NOM, NA_SPONSOR,  CODE_TDF, ANNEE_SPONSOR, COMPTE_ORACLE, DATE_INSERT)
+                values ('".$n_equipe."', (".$n_sponsor."),  '".$nom."', '".$na_sponsor."', '".$code_tdf."', '".$annee_sponsor."',  USER , sysdate)";
 
 
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -33,7 +36,7 @@
                 $res = majDonneesPreparees($cur);
                 $conn->commit();
                 echo "Sponsor suivant ajouté :\n";
-                echo "numéro " .$n_sponsor . ", " . $nom . " né en " . $annee_sponsor . " participant pour la première fois en " . $na_sponsor . "  et de nationnalité : " . $code_tdf; 
+                /*echo "numéro " .$n_sponsor . ", " . $nom . " né en " . $annee_sponsor . " participant pour la première fois en " . $na_sponsor . "  et de nationnalité : " . $code_tdf; */
             }catch(PDOException $e){
                 $conn->rollBack();
                 //die ($e->getMessage() . "\nErreur lors de l'ajout du courreur");
