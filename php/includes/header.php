@@ -78,7 +78,7 @@ width: 636px ;
                         <ul class="dropdown-menu">
                             <li><a href="../php/ajoutCoureur.php">Ajouter un coureur</a></li>
                             <li><a href="../php/ajoutSponsor.php">Ajouter un sponsor</a></li>
-                            <li><a href="#">Ajouter un lama</a></li> 
+                            <li><a href="../php/ajoutEquipe.php">Ajouter une équipe</a></li> 
                         </ul>
                         </li>
                         <li class="dropdown">

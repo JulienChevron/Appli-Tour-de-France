@@ -42,7 +42,7 @@
                 ?>
             </select>
             <!--<span class="tooltip">Veillez remplir un code TDF</span>-->
-            </br>F
+            </br>
            </br></br>
         <input type="submit" name="Envoyer" id="Envoyer"/>
     </form>

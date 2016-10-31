@@ -36,7 +36,7 @@
                 $res = majDonneesPreparees($cur);
                 $conn->commit();
                 echo "Sponsor suivant ajouté :\n";
-                /*echo "numéro " .$n_sponsor . ", " . $nom . " né en " . $annee_sponsor . " participant pour la première fois en " . $na_sponsor . "  et de nationnalité : " . $code_tdf; */
+                echo "sponsor numéro " .$n_sponsor . ", appartenant à l'équipe " .$n_equipe. ", de nom " . $nom . ", créé en " . $annee_sponsor . " participant sous " . $na_sponsor . "  et de nationnalité " . $code_tdf; 
             }catch(PDOException $e){
                 $conn->rollBack();
                 //die ($e->getMessage() . "\nErreur lors de l'ajout du courreur");
