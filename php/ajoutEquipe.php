@@ -2,7 +2,6 @@
     $pwd='../';
     include("includes/header.php");
 ?>
-
  <div id="contenu" >
 
      <?php
@@ -19,21 +18,21 @@
     ?>
 
     <form method="post" name="form" id="form" onsubmit="return valider(this);">
-        <label class="form_col" for="n_equipe">N_EQUIPE :</label>
-        <input type="number" name="n_equipe" id="n_equipe" value="<?php if(isset($saveNEquipe)) echo $saveNEquipe; ?>"/></br>
-        <label class="form_col" for="annee_creation">Année de création:</label>
-        <input type="number" name="annee_creation" id="annee_creation" min="1900" value="<?php if(isset($saveAnnee_creation)) echo $saveAnnee_creation; ?>"/></br>
-        <label class="form_col" for="annee_disparition">Année de disparition :</label>
-        <input type="number" name="annee_disparition" id="annee_disparition" min="1900" value="<?php if(isset($saveAnnee_disparition)) echo $saveAnnee_disparition; ?>"/></br>
-        
+        <label class="form_col" for="annee">ANNEE :</label>
+        <input type="number" name="annee" id="annee" min="1900" value="<?php if(isset($saveAnnee)) echo $saveAnnee; ?>"/></br>
+        <label class="form_col" for="n_sponsor">N_SPONSOR :</label>
+        <input type="number" name="n_sponsor" id="n_sponsor" value="<?php if(isset($saveNSponsor)) echo $saveNSponsor; ?>"/></br>
+        <label class="form_col" for="annee_disparition">N_PRE_DIRECTEUR :</label>
+        <input type="number" name="n_pre_directeur" id="n_pre_directeur" value="<?php if(isset($saveNPreDirecteur)) echo $saveNPreDirecteur; ?>"/></br>
+        <label class="form_col" for="n_co_directeur">N_CO_DIRECTEUR :</label>
+        <input type="number" name="n_co_directeur" id="n_co_directeur" value="<?php if(isset($saveNCoDirecteur)) echo $saveNCoDirecteur; ?>"/></br>
+
             <!--<span class="tooltip">Veillez remplir un code TDF</span>-->
             </br>
            </br></br>
         <input type="submit" name="Envoyer" id="Envoyer"/>
     </form>
-
-    <script type="text/javascript" src="../js/verifFormulaire.js"></script>
-
+    <script type="text/javascript" src="../js/verifFormulaire.js"></script
 </div>
 
 <?php
