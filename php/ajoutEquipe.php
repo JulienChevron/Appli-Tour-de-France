@@ -16,15 +16,15 @@
             include('ajoutEquipeFonc.php');
         }
     ?>
-
+    <h2>Ajouter une équipe</h2>
     <form method="post" name="form" id="form" onsubmit="return valider(this);">
         <label class="form_col" for="annee">ANNEE :</label>
         <input type="number" name="annee" id="annee" min="1900" value="<?php if(isset($saveAnnee)) echo $saveAnnee; ?>"/></br>
-        <label class="form_col" for="n_sponsor">N_SPONSOR :</label>
+        <label class="form_col" for="n_sponsor">Numéro du sponsor :</label>
         <input type="number" name="n_sponsor" id="n_sponsor" value="<?php if(isset($saveNSponsor)) echo $saveNSponsor; ?>"/></br>
-        <label class="form_col" for="annee_disparition">N_PRE_DIRECTEUR :</label>
+        <label class="form_col" for="annee_disparition">Numéro du directeur sportif n°1 :</label>
         <input type="number" name="n_pre_directeur" id="n_pre_directeur" value="<?php if(isset($saveNPreDirecteur)) echo $saveNPreDirecteur; ?>"/></br>
-        <label class="form_col" for="n_co_directeur">N_CO_DIRECTEUR :</label>
+        <label class="form_col" for="n_co_directeur">Numéro du directeur sportif n°2 :</label>
         <input type="number" name="n_co_directeur" id="n_co_directeur" value="<?php if(isset($saveNCoDirecteur)) echo $saveNCoDirecteur; ?>"/></br>
 
             <!--<span class="tooltip">Veillez remplir un code TDF</span>-->

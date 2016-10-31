@@ -18,17 +18,17 @@
             include('ajoutSponsorFonc.php');
         }
     ?>
-
+    <h2>Ajouter un sponsor</h2>
     <form method="post" name="form" id="form" onsubmit="return valider(this);">
-        <label class="form_col" for="n_equipe">N_EQUIPE :</label>
-        <input type="text" name="n_equipe" id="n_equipe" value="<?php if(isset($saveNEquipe)) echo $saveNEquipe; ?>"/></br>
+        <label class="form_col" for="n_equipe">Numéro de l'équipe :</label>
+        <input type="number" name="n_equipe" id="n_equipe" value="<?php if(isset($saveNEquipe)) echo $saveNEquipe; ?>"/></br>
         <label class="form_col" for="nom">Nom du sponsor:</label>
-        <input type="text" name="nom" id="nom" value="<?php if(isset($saveNom)) echo $saveNom; ?>"/></br>
-        <label class="form_col" for="na_sponsor">NA_SPONSOR :</label>
-        <input type="text" name="na_sponsor" id="na_sponsor" value="<?php if(isset($saveNaSponsor)) echo $saveNaSponsor; ?>"/></br>
-        <label class="form_col" for="annee_sponsor">ANNEE_SPONSOR :</label>
+        <input type="text" name="nom" id="nom" placeholder="Française Des Jeux" value="<?php if(isset($saveNom)) echo $saveNom; ?>"/></br>
+        <label class="form_col" for="na_sponsor">Nom abrégé du sponsor :</label>
+        <input type="text" name="na_sponsor" id="na_sponsor" placeholder="FDJ" value="<?php if(isset($saveNaSponsor)) echo $saveNaSponsor; ?>"/></br>
+        <label class="form_col" for="annee_sponsor">Année de début (pour une équipe) :</label>
         <input type="number" name="annee_sponsor" id="annee_sponsor" min="1900" max="2016" value="<?php if(isset($saveAnneeSponsor)) echo $saveAnneeSponsor; ?>"/></br>
-        <label class="form_col" for="code_tdf">Code tdf :</label>
+        <label class="form_col" for="code_tdf">Nationalité :</label>
             <select name="code_tdf" id="code_tdf">
                 <?php 
                     selectCodetdf($conn);
