@@ -92,9 +92,18 @@ function AfficherDonnee($tab)
     echo "<br/>";
   }
 }
+
+//---------------------------------------------------------------------------------------------
+function selectCodetdf($bdd){
+            echo "PASS : 1";
+            $sql = "select code_tdf from tdf_pays";
+            $tab = LireDonneesPDO3($bdd,$sql);
+            creerListe($tab);
+        }
 //---------------------------------------------------------------------------------------------
 function creerListe($tab)
 {
+	//echo "<option value=''></option>";
   foreach($tab as $ligne)
   {
     foreach($ligne as $cle =>$valeur)
