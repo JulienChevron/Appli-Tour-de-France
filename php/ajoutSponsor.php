@@ -14,13 +14,6 @@
         $instance = "oci:dbname=info";
         $conn = ConnecterPDO($instance,$session,$mdp);
 
-        function selectCodetdf($bdd){
-            echo "PASS : 1";
-            $sql = "select code_tdf from tdf_pays";
-            $tab = LireDonneesPDO3($bdd,$sql);
-            creerListe($tab);
-        }
-
         if(isset($_POST['Envoyer'])){
             include('ajoutSponsorFonc.php');
         }
