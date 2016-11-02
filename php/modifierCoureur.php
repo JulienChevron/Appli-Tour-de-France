@@ -10,7 +10,7 @@
     $conn = ConnecterPDO($instance,$session,$mdp);
 
 
-	if(isset($_GET['ncoureur']) && isset($_GET['nom']) && isset($_GET['prenom']) && isset($_GET['codetdf'])  && isset($_GET['naiss'])  && isset($_GET['anneetdf'])){
+	if(isset($_POST['ncoureur']) && isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['codetdf'])  && isset($_POST['naiss'])  && isset($_POST['anneetdf'])){
 		$ncoureur = $_GET['ncoureur'];
 		$nom = $_GET['nom'];
 		$prenom = $_GET['prenom'];
