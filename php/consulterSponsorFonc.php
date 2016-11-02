@@ -14,7 +14,7 @@ function afficherSponsor($bdd){
             $nasponsor = $donnees['NA_SPONSOR'];
             $codetdf = $donnees['CODE_TDF'];
             $anneesponsor = $donnees['ANNEE_SPONSOR'];
-            echo '<tr id="ligne"><td>' . $nequipe. '</td><td>' . $nsponsor . '</td><td>' . $nom . '</td><td>' . $nasponsor . '</td><td>' . $codetdf . '</td><td>'. $anneesponsor . '</td><td><a href="supprimerSponsor.php?nequipe=' . $nequipe . '&nsponsor=' . $nsponsor . '&nom=' . $nom . '">Supprimer</a></td></td><td><a href="modifierSponsor.php?nsponsor=' . $nsponsor . '&nom=' . $nom . '&nasponsor=' . $nasponsor . '&codetdf=' . $codetdf . '&anneetdf=' . $anneesponsor. '&codetdf=' . $codetdf . '">Modifier</a></td></tr>';
+            echo '<tr id="ligne"><td>' . $nequipe. '</td><td>' . $nsponsor . '</td><td>' . $nom . '</td><td>' . $nasponsor . '</td><td>' . $codetdf . '</td><td>'. $anneesponsor . '</td><td><a href="supprimerSponsor.php?nequipe=' . $nequipe . '&nsponsor=' . $nsponsor . '&nom=' . $nom . '">Supprimer</a></td></td><td><a href="modifierSponsor.php?nsponsor=' . $nsponsor . '&nom=' . $nom . '&nasponsor=' . $nasponsor . '&codetdf=' . $codetdf . '&anneesponsor=' . $anneesponsor. '&nequipe=' . $nequipe . '">Modifier</a></td></tr>';
         }
         echo '</table>';
         $reponse->closeCursor();
