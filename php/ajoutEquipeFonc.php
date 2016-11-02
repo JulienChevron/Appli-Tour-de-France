@@ -17,11 +17,11 @@
         
         if (isset($_POST['annee']) && isset($_POST['n_sponsor']) && isset($_POST['n_pre_directeur']) && isset($_POST['n_co_directeur'])){
 
-            $n_equipe = "select max(n_equipe)+1 from TDF_EQUIPE_ANNEE";
+            $n_equipe = "(select max(n_equipe)+1 from TDF_PARTI_EQUIPE)";
         
-            $sql = "INSERT INTO TDF_EQUIPE_ANNEE ( 
+            $sql = "INSERT INTO TDF_PARTI_EQUIPE ( 
             ANNEE, N_EQUIPE, N_SPONSOR, N_PRE_DIRECTEUR,  N_CO_DIRECTEUR, COMPTE_ORACLE, DATE_INSERT)
-                values ('".$annee."', '".$n_equipe."' ,'".$n_sponsor."', '".$n_pre_directeur."' , '".$n_co_directeur."' , USER , sysdate)";
+                values (".$annee.", ".$n_equipe." ,".$n_sponsor.", ".$n_pre_directeur." , ".$n_co_directeur." , USER , sysdate)";
 
 
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -32,14 +32,14 @@
                 $res = majDonneesPreparees($cur);
                 $conn->commit();
                 echo "Equipe suivante ajoutée :\n";
-                /*echo "numéro " .$n_sponsor . ", " . $nom . " né en " . $annee_sponsor . " participant pour la première fois en " . $na_sponsor . "  et de nationnalité : " . $code_tdf; */
+                echo "numéro " .$n_equipe . ", de sponsor numéro" . $n_sponsor . ", avec les directeurs " . $n_pre_directeur . " et ".$n_co_directeur. ", participant pour la première fois en " . $annee; 
             }catch(PDOException $e){
                 $conn->rollBack();
                 die ($e->getMessage() . "\nErreur lors de l'ajout de l'équipe");
                 echo "Erreur lors de l'ajout de l'équipe";
             }
         }else{
-            echo "Ajout du sponsor impossible :\n";
+            echo "Ajout de l'équipe impossible :\n";
             $saveAnneeEquipe = $_POST['annee'];
             $saveNSponsor = $_POST['n_sponsor'];
             $saveNPreDirecteur = $_POST['n_pre_directeur'];
