@@ -3,6 +3,16 @@
     include("includes/header.php");
 ?>
 
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- En-tête de la page -->
+        <meta charset="utf-8" />
+        <title>Titre</title>
+    </head>
+
+<body>
  <div id="contenu" >
 
      <?php
@@ -11,7 +21,7 @@
           
         $session = "ETU2_51";
         $mdp = "ETU2_51";
-        $instance = "oci:dbname=info";
+        $instance = "oci:dbname=info;charset=latin1";
         $conn = ConnecterPDO($instance,$session,$mdp);
     ?>
 
@@ -33,9 +43,9 @@
 
     <?php
         if(isset($_GET['supp'])){
-            if($_GET['supp']=='ok')
+            if(strcmp($_GET['supp'],'ok')==0)
                 echo "Coureur supprimé";
-            else
+            else if(strcmp($_GET['supp'],'erreur')==0)
                 echo "Suppression impossible, le coureur a déjà participé au tour";
         }
         include('consulterCoureurFonc.php');
@@ -48,3 +58,6 @@
 <?php
     include("includes/footer.php");
 ?>
+
+</body>
+</html>

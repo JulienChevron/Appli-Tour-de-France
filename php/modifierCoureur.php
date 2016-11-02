@@ -25,6 +25,16 @@
 
 ?>
 
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- En-tête de la page -->
+        <meta charset="utf-8" />
+        <title>Titre</title>
+    </head>
+
+<body>
+
 	<div id="contenu" >
 	  <form method="post" name="form" id="form" onsubmit="return valider(this);">
 	  	<input type="hidden" name="ncoureur" id="ncoureur" value="<?php echo $ncoureur; ?>"/></br>
@@ -55,3 +65,6 @@
 <?php
     include("includes/footer.php");
 ?>
+
+</body>
+</html>

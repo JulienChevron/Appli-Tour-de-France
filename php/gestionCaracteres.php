@@ -1,12 +1,12 @@
 <?php
 
 function majuscule($str){
-	$maj = mb_strtoupper($str);
+	$maj = mb_strtoupper($str,"UTF-8");
 	return $maj;
 }
 
 function minuscule($str){
-	$min = mb_strtolower($str);
+	$min = mb_strtolower($str,"UTF-8");
 	return $min;
 }
 
