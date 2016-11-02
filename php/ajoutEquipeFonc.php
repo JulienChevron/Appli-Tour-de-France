@@ -35,8 +35,8 @@
                 /*echo "numéro " .$n_sponsor . ", " . $nom . " né en " . $annee_sponsor . " participant pour la première fois en " . $na_sponsor . "  et de nationnalité : " . $code_tdf; */
             }catch(PDOException $e){
                 $conn->rollBack();
-                //die ($e->getMessage() . "\nErreur lors de l'ajout du courreur");
-                echo "Erreur lors de l'ajout du sponsor";
+                die ($e->getMessage() . "\nErreur lors de l'ajout de l'équipe");
+                echo "Erreur lors de l'ajout de l'équipe";
             }
         }else{
             echo "Ajout du sponsor impossible :\n";
