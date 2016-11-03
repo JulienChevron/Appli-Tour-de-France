@@ -12,21 +12,6 @@ function verifText(champ)
    }
 }
 
-function verifNumber(champ)
-{
-   var age = parseInt(champ.value);
-   if(isNaN(age))
-   {
-      surligne(champ, true);
-      return false;
-   }
-   else
-   {
-      surligne(champ, false);
-      return true;
-   }
-}
-
 function surligne(champ, erreur)
 {
    if(erreur)
@@ -39,8 +24,6 @@ function valider(f)
 {
    var nom = verifText(f.nom);
    var prenom = verifText(f.prenom);
-   var naissance = verifNumber(f.annee_naiss);
-   var tour = verifNumber(f.annee_prem);
    var code = verifText(f.code_tdf);
 
    
