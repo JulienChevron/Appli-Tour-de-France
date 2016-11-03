@@ -61,13 +61,8 @@ function valider(f)
    var ageok = Age(f.annee_naiss,f.annee_prem);
 
    
-   if(nom && prenom && naissance && tour && code){
-      if(ageok){
-         return true;
-      }else{
-         alert("Le coureur ne peut participer au tour avant 18 ans");
-         return false;
-      }
+   if(nom && prenom && naissance && tour && code && age){
+      return true;
    }
    else
    {
