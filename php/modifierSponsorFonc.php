@@ -21,6 +21,9 @@
         if (isset($_POST['anneesponsor'])){
             $anneesponsor2 = $_POST['anneesponsor'];
         }
+        
+
+        //rentre pas dans le if
         if (isset($_POST['nequipe']) && isset($_POST['nsponsor']) && isset($_POST['nom']) && isset($_POST['nasponsor']) && isset($_POST['codetdf']) && isset($_POST['anneesponsor']) && isset($_POST['Envoyer']) && ( strcmp($nom,"?") != 0 )){
         
             $sql = "UPDATE TDF_SPONSOR SET N_EQUIPE = '" . $nequipe2 ."' , N_SPONSOR = '" . $nsponsor2 . "' , NOM = '" . $nom2 . "' , NA_SPONSOR = '" . $nasponsor2 . "' , CODE_TDF = '" . $codetdf2 . "' , ANNEE_SPONSOR = '" . $anneesponsor2 . "'WHERE N_SPONSOR = '" . $nsponsor2 ."'";

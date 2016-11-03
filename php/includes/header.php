@@ -87,7 +87,6 @@ width: 636px ;
                         <ul class="dropdown-menu">
                             <li><a href="../php/consulterCoureur.php">Consulter les coureurs</a></li>
                             <li><a href="../php/consulterSponsor.php">Consulter les sponsors</a></li>
-                            <li><a href="#">Ajouter les lamas</a></li> 
                         </ul>
                         </li>
                     </ul>
