@@ -12,7 +12,7 @@
             $annee_prem = $_POST['annee_prem'];
             $annee_naiss = $_POST['annee_naiss'];
         }else {
-            $annee_prem = ''
+            $annee_prem = '';
             $annee_naiss = '';
         }
         if (isset($_POST['code_tdf'])){

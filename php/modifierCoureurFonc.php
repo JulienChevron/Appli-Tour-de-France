@@ -9,9 +9,11 @@
             $prenom2 = formaterPrenom($prenom2);
         }
         if (isset($_POST['annee_naiss']) && $_POST['annee_prem']){
-            $annee_prem2 = $_POST['annee_prem'];
-            $annee_naiss2 = $_POST['annee_naiss'];
-            //verificationAge($annee_prem, $annee_naiss);
+            $annee_prem = $_POST['annee_prem'];
+            $annee_naiss = $_POST['annee_naiss'];
+        }else {
+            $annee_prem = '';
+            $annee_naiss = '';
         }
         if (isset($_POST['code_tdf'])){
             $code_tdf2 = $_POST['code_tdf'];
@@ -19,7 +21,7 @@
         if (isset($_POST['ncoureur'])){
             $ncoureur2 = $_POST['ncoureur'];
         }
-        if (isset($_POST['prenom']) && isset($_POST['nom']) && isset($_POST['annee_naiss']) && isset($_POST['annee_prem']) && isset($_POST['code_tdf']) && isset($_POST['ncoureur']) && ( strcmp($nom2,"?") != 0 && strcmp($prenom2,"?") != 0)){
+        if (isset($_POST['prenom']) && isset($_POST['nom']) && isset($_POST['code_tdf']) && isset($_POST['ncoureur']) && ( strcmp($nom2,"?") != 0 && strcmp($prenom2,"?") != 0)){
             Afficher($nom2);
             Afficher($prenom2);
         
