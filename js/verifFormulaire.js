@@ -27,22 +27,6 @@ function verifNumber(champ)
    }
 }
 
-function Age(champNaissance, champPremier)
-{
-   var naissance = parseInt(champNaissance.value);
-   var premier = parseInt(champPremier.value);
-   if(premier-naissance>18)
-   {
-      surligne(champ, true);
-      return true;
-   }
-   else
-   {
-      surligne(champ, false);
-      return false;
-   }
-}
-
 function surligne(champ, erreur)
 {
    if(erreur)
@@ -58,10 +42,9 @@ function valider(f)
    var naissance = verifNumber(f.annee_naiss);
    var tour = verifNumber(f.annee_prem);
    var code = verifText(f.code_tdf);
-   var ageok = Age(f.annee_naiss,f.annee_prem);
 
    
-   if(nom && prenom && naissance && tour && code && age){
+   if(nom && prenom && naissance && tour && code){
       return true;
    }
    else

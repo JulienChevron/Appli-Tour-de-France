@@ -32,7 +32,7 @@
                 $res = majDonneesPreparees($cur);
                 $conn->commit();
                 echo "Courreur suivant ajouté :\n";
-                echo $prenom . " " . $nom . " né en " . $annee_naiss . " participant pour la première fois en " . $annee_prem . "  et de nationnalité : " . $code_tdf; 
+                echo utf8_encode($prenom) . " " . utf8_encode($nom) . " né en " . $annee_naiss . " participant pour la première fois en " . $annee_prem . "  et de nationnalité : " . $code_tdf; 
             }catch(PDOException $e){
                 $conn->rollBack();
                 //die ($e->getMessage() . "\nErreur lors de l'ajout du courreur");
