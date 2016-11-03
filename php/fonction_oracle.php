@@ -120,25 +120,11 @@ function Afficher($obj)
 	print_r($obj);
 	echo "</pre><hr/>";
 }
-/* doc
-$hote = '127.0.0.1';
-$port = '1521'; // port par défaut
-$service = 'TEST';
-$utilisateur = 'TEST';
-$motdepasse = 'MotDePasse';
+//---------------------------------------------------------------------------------------------
+function ApostropheInsert($str)
+{
+	$str = preg_replace("#'#", "''", $str);
+	return $str;
+}
 
-$lien_base =
-"oci:dbname=(DESCRIPTION =
-(ADDRESS_LIST =
-	(ADDRESS =
-		(PROTOCOL = TCP)
-		(Host = ".$hote .")
-		(Port = ".$port."))
-)
-(CONNECT_DATA =
-	(SERVICE_NAME = ".$service.")
-)
-)";
-
-*/
  ?>

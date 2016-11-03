@@ -21,9 +21,12 @@
         if (isset($_POST['prenom']) && isset($_POST['nom']) && isset($_POST['code_tdf']) && isset($_POST['Envoyer']) && ( strcmp($nom,"?") != 0 && strcmp($prenom,"?") != 0)){
 
             $n_coureur = "select max(n_coureur)+1 from TDF_COUREUR";
+            $nom = ApostropheInsert($nom);
+            $prenom = ApostropheInsert($prenom);
         
             $sql = "INSERT INTO TDF_COUREUR (N_COUREUR, NOM, PRENOM, ANNEE_NAISSANCE, CODE_TDF, ANNEE_PREM, COMPTE_ORACLE, DATE_INSERT)
                 values ((".$n_coureur."), '".$nom."', '".$prenom."', '".$annee_naiss."', '".$code_tdf."', '".$annee_prem."', USER , sysdate)";
+            
 
             Afficher($sql);
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

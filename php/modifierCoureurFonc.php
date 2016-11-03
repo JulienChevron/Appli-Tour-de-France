@@ -9,11 +9,11 @@
             $prenom2 = formaterPrenom($prenom2);
         }
         if (isset($_POST['annee_naiss']) && $_POST['annee_prem']){
-            $annee_prem = $_POST['annee_prem'];
-            $annee_naiss = $_POST['annee_naiss'];
+            $annee_prem2 = $_POST['annee_prem'];
+            $annee_naiss2 = $_POST['annee_naiss'];
         }else {
-            $annee_prem = '';
-            $annee_naiss = '';
+            $annee_prem2 = '';
+            $annee_naiss2 = '';
         }
         if (isset($_POST['code_tdf'])){
             $code_tdf2 = $_POST['code_tdf'];
@@ -24,6 +24,9 @@
         if (isset($_POST['prenom']) && isset($_POST['nom']) && isset($_POST['code_tdf']) && isset($_POST['ncoureur']) && ( strcmp($nom2,"?") != 0 && strcmp($prenom2,"?") != 0)){
             Afficher($nom2);
             Afficher($prenom2);
+
+            $nom2 = ApostropheInsert($nom2);
+            $prenom2 = ApostropheInsert($prenom2);            
         
             $sql = "UPDATE TDF_COUREUR SET NOM = '" . $nom2 ."' , PRENOM = '" . $prenom2 . "' , CODE_TDF = '" . $code_tdf2 . "' , ANNEE_NAISSANCE = '" . $annee_naiss2 . "' , ANNEE_PREM = '" . $annee_prem2 . "' WHERE N_COUREUR = '" . $ncoureur2 ."'";
 
