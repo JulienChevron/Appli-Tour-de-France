@@ -27,6 +27,22 @@ function verifNumber(champ)
    }
 }
 
+function Age(champNaissance, champPremier)
+{
+   var naissance = parseInt(champNaissance.value);
+   var premier = parseInt(champPremier.value);
+   if(premier-naissance>18)
+   {
+      surligne(champ, true);
+      return true;
+   }
+   else
+   {
+      surligne(champ, false);
+      return false;
+   }
+}
+
 function surligne(champ, erreur)
 {
    if(erreur)
@@ -42,10 +58,17 @@ function valider(f)
    var naissance = verifNumber(f.annee_naiss);
    var tour = verifNumber(f.annee_prem);
    var code = verifText(f.code_tdf);
+   var ageok = Age(f.annee_naiss,f.annee_prem);
 
    
-   if(nom && prenom && naissance && tour && code)
-      return true;
+   if(nom && prenom && naissance && tour && code){
+      if(ageok){
+         return true;
+      }else{
+         alert("Le coureur ne peut participer au tour avant 18 ans");
+         return false;
+      }
+   }
    else
    {
       alert("Veuillez remplir correctement tous les champs");

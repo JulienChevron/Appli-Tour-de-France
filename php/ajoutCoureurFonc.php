@@ -16,7 +16,7 @@
         if (isset($_POST['code_tdf'])){
             $code_tdf = $_POST['code_tdf'];
         }
-        if (isset($_POST['prenom']) && isset($_POST['nom']) && isset($_POST['annee_naiss']) && isset($_POST['annee_prem']) && isset($_POST['code_tdf']) && isset($_POST['Envoyer']) && ( strcmp($nom,"?") != 0 || strcmp($prenom,"?") != 0)){
+        if (isset($_POST['prenom']) && isset($_POST['nom']) && isset($_POST['annee_naiss']) && isset($_POST['annee_prem']) && isset($_POST['code_tdf']) && isset($_POST['Envoyer']) && ( strcmp($nom,"?") != 0 && strcmp($prenom,"?") != 0)){
 
             $n_coureur = "select max(n_coureur)+1 from TDF_COUREUR";
         

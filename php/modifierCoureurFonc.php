@@ -19,7 +19,9 @@
         if (isset($_POST['ncoureur'])){
             $ncoureur2 = $_POST['ncoureur'];
         }
-        if (isset($_POST['prenom']) && isset($_POST['nom']) && isset($_POST['annee_naiss']) && isset($_POST['annee_prem']) && isset($_POST['code_tdf']) && isset($_POST['ncoureur']) && ( strcmp($nom2,"?") != 0 || strcmp($prenom2,"?") != 0)){
+        if (isset($_POST['prenom']) && isset($_POST['nom']) && isset($_POST['annee_naiss']) && isset($_POST['annee_prem']) && isset($_POST['code_tdf']) && isset($_POST['ncoureur']) && ( strcmp($nom2,"?") != 0 && strcmp($prenom2,"?") != 0)){
+            Afficher($nom2);
+            Afficher($prenom2);
         
             $sql = "UPDATE TDF_COUREUR SET NOM = '" . $nom2 ."' , PRENOM = '" . $prenom2 . "' , CODE_TDF = '" . $code_tdf2 . "' , ANNEE_NAISSANCE = '" . $annee_naiss2 . "' , ANNEE_PREM = '" . $annee_prem2 . "' WHERE N_COUREUR = '" . $ncoureur2 ."'";
 

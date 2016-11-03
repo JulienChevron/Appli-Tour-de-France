@@ -9,25 +9,15 @@ include('gestionCaracteres.php');
 function formaterPrenom($str){
 	if(verifierFrancais($str)){
 		$str = enleverEspaces($str);
-		Afficher($str);
 		$str = unTiretMax($str);
-		Afficher($str);
 		$str = unApostropheMax($str);
-		Afficher($str);
 		$str = enleverElementDebut($str);
-		Afficher($str);
 		$str = enleverElementFin($str);
-		Afficher($str);
 		$str = enleverCaracteresSpeciaux($str);
-		Afficher($str);
 		$str = minuscule($str);
-		Afficher($str);
 		$str = majusculesPrenom($str);
-		Afficher($str);
 		$str = enleverEspacesInutiles($str);
-		Afficher($str);
 		$str = utf8_decode($str);
-		Afficher($str);
 		if (verifierReste($str)){
 			return $str;
 		}else{
