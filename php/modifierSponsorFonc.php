@@ -2,12 +2,6 @@
 
         include('formatage.php');
 
-        if(isset($_POST['nequipe'])){
-            $nequipe2 = $_POST['nequipe'];
-        }
-        if(isset($_POST['nsponsor'])){
-            $nsponsor2 = $_POST['nsponsor'];
-        }
         if (isset($_POST['nom'])){
             $nom2 = $_POST['nom'];
             $nom2 = formaterNom($nom2);
@@ -15,8 +9,8 @@
         if (isset($_POST['nasponsor'])){
             $nasponsor2 = $_POST['nasponsor'];
         }
-        if (isset($_POST['codetdf'])){
-            $codetdf2 = $_POST['codetdf'];
+        if (isset($_POST['code_tdf'])){
+            $codetdf2 = $_POST['code_tdf'];
         }
         if (isset($_POST['anneesponsor'])){
             $anneesponsor2 = $_POST['anneesponsor'];
@@ -24,9 +18,9 @@
         
 
         //rentre pas dans le if
-        if (isset($_POST['nequipe']) && isset($_POST['nsponsor']) && isset($_POST['nom']) && isset($_POST['nasponsor']) && isset($_POST['codetdf']) && isset($_POST['anneesponsor']) && isset($_POST['Envoyer']) && ( strcmp($nom,"?") != 0 )){
+        if (isset($_POST['nom']) && isset($_POST['nasponsor']) &&  isset($_POST['code_tdf']) && isset($_POST['anneesponsor'])){
         
-            $sql = "UPDATE TDF_SPONSOR SET N_EQUIPE = '" . $nequipe2 ."' , N_SPONSOR = '" . $nsponsor2 . "' , NOM = '" . $nom2 . "' , NA_SPONSOR = '" . $nasponsor2 . "' , CODE_TDF = '" . $codetdf2 . "' , ANNEE_SPONSOR = '" . $anneesponsor2 . "'WHERE N_SPONSOR = '" . $nsponsor2 ."'";
+            $sql = "UPDATE TDF_SPONSOR SET  NOM = '" . $nom2 . "' , NA_SPONSOR = '" . $nasponsor2 . "' , CODE_TDF = '" . $codetdf2 . "' , ANNEE_SPONSOR = '" . $anneesponsor2 . "'WHERE N_SPONSOR = '" . $nsponsor ."'";
 
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $conn->setAttribute(PDO::ATTR_AUTOCOMMIT, FALSE);
