@@ -8,7 +8,7 @@
     $mdp = "ETU2_51";
     $instance = "oci:dbname=info";
     $conn = ConnecterPDO($instance,$session,$mdp);
-
+    
 	if(isset($_GET['ncoureur']) && isset($_GET['nom']) && isset($_GET['prenom']) && isset($_GET['codetdf'])  && isset($_GET['naiss'])  && isset($_GET['anneetdf'])){
 		$ncoureur = $_GET['ncoureur'];
 		$nom = $_GET['nom'];

@@ -40,7 +40,8 @@
                 echo "Courreur modifié :\n";
             }catch(PDOException $e){
                 $conn->rollBack();
-                die ($e->getMessage() . "\nErreur lors de l'ajout du courreur");
+                //die ($e->getMessage() . "\nErreur lors de l'ajout du courreur");
+                echo $e->getCode();
                 echo "Erreur lors de la modification du courreur";
             }
         }else{

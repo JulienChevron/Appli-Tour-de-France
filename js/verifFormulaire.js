@@ -1,6 +1,6 @@
 function verifText(champ)
 {
-   if(champ.value == "" || champ.value == "SELECTIONNEZ")
+   if(champ.value == "")
    {
       surligne(champ, true);
       return false;
@@ -25,9 +25,8 @@ function valider(f)
    var nom = verifText(f.nom);
    var prenom = verifText(f.prenom);
    var code = verifText(f.code_tdf);
-
    
-   if(nom && prenom && naissance && tour && code){
+   if(nom && prenom && code){
       return true;
    }
    else

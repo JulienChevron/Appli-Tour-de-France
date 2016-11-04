@@ -95,15 +95,21 @@ function AfficherDonnee($tab)
 
 //---------------------------------------------------------------------------------------------
 function selectCodetdf($bdd){
-            echo "PASS : 1";
-            $sql = "select code_tdf from tdf_pays";
-            $tab = LireDonneesPDO3($bdd,$sql);
-            creerListe($tab);
+            $sql = "SELECT CODE_TDF, NOM from TDF_PAYS";
+            $reponse = $bdd->query($sql);
+            echo "<option value=''>Selectionnez un pays</option>";
+           	foreach($reponse as $ligne)
+  			{		
+            	$code = utf8_encode($ligne['CODE_TDF']);
+            	$nom = utf8_encode($ligne['NOM']);
+            	echo "<option value='" . $code . "'>" . $nom . "</option>";
+            }
+            	
         }
 //---------------------------------------------------------------------------------------------
-function creerListe($tab)
+function creerListePays($tab)
 {
-	//echo "<option value=''></option>";
+	echo "<option value='PAYS'>PAYS</option>";
   foreach($tab as $ligne)
   {
     foreach($ligne as $cle =>$valeur)
