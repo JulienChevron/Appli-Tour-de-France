@@ -13,4 +13,11 @@ function verifierReste($str){
     $regex = "#[œŒæÆa-zA-Z]#";
     return preg_match($regex, $str);
 }
+function verifierTaille($str){
+    if(strlen($str)>18){
+        return false;
+    }else{
+        return true;
+    }
+}
 ?>

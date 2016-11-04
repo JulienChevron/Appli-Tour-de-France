@@ -26,18 +26,19 @@
     ?>
 
        <form method="get" name="form" id="form" action="<?=$_SERVER['PHP_SELF']?>">
-        <label class="form_col" for="recherche">Recherche :</label>
-        <input type="text" name="recherche" id="recherche"/></br>
-        <label class="form_col" for="annee_naiss">Année de naissance :</label>
-        <input type="number" name="annee_naiss" id="annee_naiss" min="1900" max="1998"/>
+        <label class="form_col" for="nom">Nom :</label>
+        <input type="text" name="nom" id="nom"/></br>
+        <label class="form_col" for="prenom">Prénom :</label>
+        <input type="text" name="prenom" id="prenom"/></br>
         <label class="form_col" for="annee_prem">Année de premier tour :</label>
-        <input type="number" name="annee_prem" id="annee_prem" min="1900" max="2016"/>
+        <input type="number" name="annee_prem" id="annee_prem" min="1900" max="2016"/></br>
         <label class="form_col" for="code_tdf">Code tdf :</label>
             <select name="code_tdf" id="code_tdf">
                 <?php 
                     selectCodetdf($conn);
                 ?>
             </select>
+        </br>
         <input type="submit" name="Envoyer" id="Envoyer"/>
     </form>
 

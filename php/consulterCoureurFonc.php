@@ -2,9 +2,9 @@
 
 function afficherCoureur($bdd){
 
-        if(isset($_GET["recherche"]) && isset($_GET["annee_naiss"]) && isset($_GET["annee_prem"]) && isset($_GET["code_tdf"])){
+        if(isset($_GET["nom"]) && isset($_GET["prenom"]) && isset($_GET["annee_prem"]) && isset($_GET["code_tdf"])){
 
-            $sql = 'SELECT * FROM TDF_COUREUR WHERE ANNEE_PREM = ' . $_GET["annee_prem"] . ' ORDER BY N_COUREUR DESC';
+            $sql = "SELECT * FROM TDF_COUREUR WHERE ANNEE_PREM = '" . $_GET["annee_prem"] . "'AND CODE_TDF = '" . $_GET["code_tdf"] . "'  ORDER BY N_COUREUR DESC";
             $reponse = $bdd->query($sql);
         
              echo '<table class="table table-condensed" id="table"><thead> <tr> <th>Numero</th> <th>Prenom</th> <th>Nom</th> <th>Code TDF</th> <th>Année de naissance</th><th>Année premier tour</th>';

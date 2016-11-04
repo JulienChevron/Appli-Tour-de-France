@@ -8,11 +8,14 @@
             $nom = formaterNom($nom);
             $prenom = formaterPrenom($prenom);
         }
-        if (isset($_POST['annee_naiss']) && $_POST['annee_prem']){
+        if(isset($_POST['annee_prem'])){
             $annee_prem = $_POST['annee_prem'];
+        }else {
+            $annee_prem = '';
+        }
+        if(isset($_POST['annee_naiss'])){
             $annee_naiss = $_POST['annee_naiss'];
         }else {
-            $annee_prem = '' ;
             $annee_naiss = '';
         }
         if (isset($_POST['code_tdf'])){
