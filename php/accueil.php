@@ -1,7 +1,6 @@
 <?php 
     $pwd='../';
     include("includes/header.php");
-	include("includes/assets.php");
 ?>
             <div id="contenu">
 				

@@ -1,14 +1,12 @@
 <?php
     $pwd='../';
     include("includes/header.php");
+    include('fonction_oracle.php');
 ?>
 
  <div id="contenu" >
 
      <?php
-    
-        include('fonction_oracle.php');
-          
         $session = "ETU2_51";
         $mdp = "ETU2_51";
         $instance = "oci:dbname=info";
@@ -39,8 +37,6 @@
         include('consulterSponsorFonc.php');
         afficherSponsor($conn);
     ?>
-
-
 </div>
 
 <?php

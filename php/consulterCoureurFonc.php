@@ -65,7 +65,6 @@ function requeteFiltre($nom,$prenom,$prem,$naiss,$tdf){
     }
     $sql = $sql . "ORDER BY N_COUREUR DESC";
     return $sql;
-
 }
 
 ?>

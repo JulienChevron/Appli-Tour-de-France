@@ -53,6 +53,4 @@
             $saveAnnee_prem = $_POST['annee_prem'];
             $saveAnnee_naiss = $_POST['annee_naiss'];
         }
-
-
 ?>
