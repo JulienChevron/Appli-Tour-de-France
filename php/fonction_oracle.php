@@ -107,18 +107,16 @@ function selectCodetdf($bdd){
             	
         }
 //---------------------------------------------------------------------------------------------
-function creerListePays($tab)
-{
-	echo "<option value='PAYS'>PAYS</option>";
-  foreach($tab as $ligne)
-  {
-    foreach($ligne as $cle =>$valeur)
-	{
-		$valeur = utf8_encode($valeur);
-		echo "<option value='" . $valeur . "'>" . $valeur . "</option>";
-	}
-  }
-}
+function selectAnneeCoureur($bdd,$annee){
+           	$sql = "SELECT ANNEE FROM TDF_ANNEE WHERE ANNEE >= " . $annee;
+            $reponse = $bdd->query($sql);
+           	foreach($reponse as $ligne)
+  			{		
+            	$annee = $ligne['ANNEE'];
+            	echo "<option value='" . $annee . "'>" . $annee . "</option>";
+            }
+            	
+        }
 //---------------------------------------------------------------------------------------------
 function Afficher($obj)
 {

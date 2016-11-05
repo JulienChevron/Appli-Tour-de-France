@@ -3,10 +3,7 @@
 function afficherCoureur($bdd){
 
         if(isset($_GET["nom"]) && isset($_GET["prenom"]) && isset($_GET["annee_prem"]) && isset($_GET["annee_naiss"]) && isset($_GET["code_tdf"])){
-            echo "FILTRE0";
             $sql = requeteFiltre($_GET["nom"],$_GET["prenom"], $_GET["annee_prem"], $_GET["annee_naiss"], $_GET["code_tdf"]);
-            echo "FILTRE1";
-            Afficher($sql);
         }else{
             $sql = 'SELECT * FROM TDF_COUREUR ORDER BY N_COUREUR DESC';
         }
@@ -22,7 +19,7 @@ function afficherCoureur($bdd){
             $prenom = utf8_encode($donnees['PRENOM']);
             $naiss = utf8_encode($donnees['ANNEE_NAISSANCE']);
             $anneetdf = utf8_encode($donnees['ANNEE_PREM']);
-            echo '<tr id="ligne"><td>' . $num . '</td><td>' . $prenom . '</td><td>' . $nom . '</td><td>' . $codetdf . '</td><td>' . $naiss . '</td><td>'. $anneetdf . '</td><td><a href="supprimerCoureur.php?ncoureur=' . $num . '&nom=' . $nom . '&prenom=' . $prenom . '">Supprimer</a></td></td><td><a href="modifierCoureur.php?ncoureur=' . $num . '&nom=' . $nom . '&prenom=' . $prenom . '&naiss=' . $naiss . '&anneetdf=' . $anneetdf . '&codetdf=' . $codetdf . '">Modifier</a></td></tr>';
+            echo '<tr id="ligne"><td>' . $num . '</td><td>' . $prenom . '</td><td>' . $nom . '</td><td>' . $codetdf . '</td><td>' . $naiss . '</td><td>'. $anneetdf . '</td><td><a href="supprimerCoureur.php?ncoureur=' . $num . '&nom=' . $nom . '&prenom=' . $prenom . '">Supprimer</a></td></td><td><a href="modifierCoureur.php?ncoureur=' . $num . '&nom=' . $nom . '&prenom=' . $prenom . '&naiss=' . $naiss . '&anneetdf=' . $anneetdf . '&codetdf=' . $codetdf . '">Modifier</a></td><td><a href="coureurPlus.php?ncoureur=' . $num . '&nom=' . $nom . '&prenom=' . $prenom . '&naiss=' . $naiss . '&anneetdf=' . $anneetdf . '&codetdf=' . $codetdf . '">Plus</a></td></tr>';
         }
         echo '</table>';
         $reponse->closeCursor();
