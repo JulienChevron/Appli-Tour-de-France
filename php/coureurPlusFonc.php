@@ -14,7 +14,6 @@
                 $reponse = $bdd->query($sqlV);
                 $valeur = $reponse->fetchAll();
                 if (count($valeur) != 0){
-                    echo $i;
                     $sql = "SELECT * FROM TDF_CLASSEMENT_" . $i . " WHERE N_COUREUR = " . $ncoureur;
                     $reponse = $bdd->query($sql);
                     while ($donnees = $reponse->fetch())
@@ -34,7 +33,30 @@
     }
 
 
-    function afficherEquipes($conn,$ncoureur){
-        echo "OUI";
+    function afficherEquipes($bdd,$ncoureur){
+        echo '<table class="table table-condensed" id="table"><thead> <tr> <th>ANNEE</th> <th>EQUIPE</th></thead>';
+        try{
+                $sqlV = "SELECT N_COUREUR FROM TDF_PARTI_COUREUR WHERE N_COUREUR = " . $ncoureur;
+                $reponse = $bdd->query($sqlV);
+                $valeur = $reponse->fetchAll();
+                if (count($valeur) != 0){
+                    $sql = "SELECT ANNEE, N_COUREUR, N_SPONSOR, NOM FROM TDF_PARTI_COUREUR JOIN TDF_SPONSOR USING (N_SPONSOR,N_EQUIPE) WHERE N_COUREUR = " .$ncoureur . " ORDER BY ANNEE DESC";
+                    $reponse = $bdd->query($sql);
+                    while ($donnees = $reponse->fetch())
+                    {   
+                        $annee = $donnees['ANNEE'];
+                        $equipe = $donnees['NOM'];
+                        echo '<tr id="ligne"><td>' . $annee . '</td><td>' . $equipe . '</td></tr>';
+                    }
+                    $reponse->closeCursor();
+               }
+            }catch(PDOException $e){
+
+            }
+        echo '</table>';
     }
 ?>
+
+
+
+

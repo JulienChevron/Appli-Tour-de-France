@@ -107,8 +107,8 @@ function selectCodetdf($bdd){
             	
         }
 //---------------------------------------------------------------------------------------------
-function selectAnneeCoureur($bdd,$annee){
-           	$sql = "SELECT ANNEE FROM TDF_ANNEE WHERE ANNEE >= " . $annee;
+function selectAnneeCoureur($bdd){
+           	$sql = "SELECT ANNEE FROM TDF_ANNEE";
             $reponse = $bdd->query($sql);
            	foreach($reponse as $ligne)
   			{		
