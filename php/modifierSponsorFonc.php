@@ -17,7 +17,6 @@
         }
         
 
-        //rentre pas dans le if
         if (isset($_POST['nom']) && isset($_POST['nasponsor']) &&  isset($_POST['code_tdf']) && isset($_POST['anneesponsor'])){
         
             $sql = "UPDATE TDF_SPONSOR SET  NOM = '" . $nom2 . "' , NA_SPONSOR = '" . $nasponsor2 . "' , CODE_TDF = '" . $codetdf2 . "' , ANNEE_SPONSOR = '" . $anneesponsor2 . "'WHERE N_SPONSOR = '" . $nsponsor ."'";

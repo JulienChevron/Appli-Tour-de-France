@@ -17,7 +17,6 @@ function majLettre($str){
     return $str;
 }
 
-
 function majusculesPrenom($str){
     $prenom = "";
     $lettre = "";

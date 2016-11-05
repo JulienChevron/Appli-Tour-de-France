@@ -1,7 +1,6 @@
 <?php
     $pwd='../';
     include("includes/header.php");
-
 	include('fonction_oracle.php');
           
     $session = "ETU2_51";

@@ -1,6 +1,5 @@
 <?php
 
-
     function afficherPalmares($bdd,$prem,$ncoureur){
         $sql = "SELECT max(ANNEE) AS ANNEE_MAX FROM TDF_ANNEE";
         $reponse = $bdd->query($sql);
@@ -32,7 +31,6 @@
         }
         echo '</table>';
     }
-
 
     function afficherEquipes($conn,$ncoureur){
         echo "OUI";
