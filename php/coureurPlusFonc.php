@@ -1,6 +1,5 @@
 <?php
 
-
     function afficherPalmares($bdd,$prem,$ncoureur){
         $sql = "SELECT max(ANNEE) AS ANNEE_MAX FROM TDF_ANNEE";
         $reponse = $bdd->query($sql);
@@ -31,7 +30,6 @@
         }
         echo '</table>';
     }
-
 
     function afficherEquipes($bdd,$ncoureur){
         echo '<table class="table table-condensed" id="table"><thead> <tr> <th>ANNEE</th> <th>EQUIPE</th></thead>';
