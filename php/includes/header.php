@@ -4,14 +4,6 @@
 <head>
     <meta charset="utf-8" />
     <title>Base de données du Tour de France</title>
-    <!--[if IE]>
-<style type="text/css">
-html pre
-{
-width: 636px ;
-}
-</style>
-<![endif]-->
 
     <link href="<?php echo $pwd; ?>css/Accueil.css" rel="stylesheet" media="all" type="text/css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -30,14 +22,6 @@ width: 636px ;
     <div id="conteneur">
 
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
-            <!-- Indicators -->
-            <!--<ol class="carousel-indicators">
-                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#myCarousel" data-slide-to="1"></li>
-                <li data-target="#myCarousel" data-slide-to="2"></li>
-                <li data-target="#myCarousel" data-slide-to="3"></li>
-				
-            </ol>-->
 
             <!-- Wrapper for slides -->
             <div class="carousel-inner" role="listbox">
@@ -92,17 +76,5 @@ width: 636px ;
                     </ul>
                 </div>
             </nav>
-
-
-            <!--<nav>
-                <ul id="menu" >
-                    <li><a href="../php/accueil.php">Accueil</a></li>
-                    <li><a href="../php/ajoutCoureur.php">Ajouteur un coureur</a></li>
-                    <li><a href="../php/ajoutEquipe.php">Ajouteur une equipe</a></li>
-					<li><a href="../php/formLogIn.php">Connexion</a></li>						
-				</ul>
-
-            </nav>-->
-				
 
 		<div id="body-conteneur">
