@@ -16,7 +16,7 @@
  <div id="contenu" >
 
        <form method="get" name="form" id="form" action="<?=$_SERVER['PHP_SELF']?>">
-        <fieldset><legend>Fitlre</legend>
+        <fieldset><legend>Filtre</legend>
         <label class="form_col" for="nom">Nom :</label>
         <input type="text" name="nom" id="nom"/>
         <label class="form_col" for="prenom">Prénom :</label>

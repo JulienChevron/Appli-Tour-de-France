@@ -12,7 +12,7 @@
                     <ul>
                     	<li>Ajout d'un coureur</li>
                     	<li>Ajout d'une équipe et d'un sponsor</li>
-                    	<li>Consultation des coureurs, des ses résultats et ses équipes</li>
+                    	<li>Consultation des coureurs, de ses résultats et ses équipes</li>
                     	<li>Consultation du classement général des dernières années</li>
                     	<li>Consultation des différentes équipes</li>
                     </ul>
