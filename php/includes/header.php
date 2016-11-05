@@ -1,3 +1,8 @@
+<?php
+    include('fonction_oracle.php');
+    include('connexionBDD.php');
+?>
+
 <!DOCTYPE html">
 <html lang="fr">
 

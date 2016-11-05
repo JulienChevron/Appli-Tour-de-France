@@ -1,12 +1,7 @@
 <?php
 
 	include('fonction_oracle.php');
-          
-    $session = "ETU2_51";
-    $mdp = "ETU2_51";
-    $instance = "oci:dbname=info";
-    $conn = ConnecterPDO($instance,$session,$mdp);
-
+    include('includes/connexionBDD.php');
 
 	if(isset($_GET['ncoureur']) && isset($_GET['nom']) && isset($_GET['prenom'])){
 		$ncoureur = $_GET['ncoureur'];
@@ -22,5 +17,5 @@
             header('Location: consulterCoureur.php?supp=erreur');
         }
         exit();
-	}
+       }
 ?>

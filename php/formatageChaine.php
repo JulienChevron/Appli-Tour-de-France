@@ -7,13 +7,6 @@ function unTiretMax($str){
 	}
 	return $str;
 }	
-/*function deuxTiretMax($str){
-	while (substr_count($str, "-")>2) { 
-		$str = preg_replace('#---#', '--', $str);
-		$str = preg_replace('#- -#', '--', $str);
-	}
-	return $str;
-}*/
 
 function deuxTiretMax($str){
 	if(preg_match("#--#", $str)==1 || preg_match("- -", $str)==1){
@@ -32,5 +25,4 @@ function unApostropheMax($str){
 	}
 	return $str;
 }	
-
 ?>

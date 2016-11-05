@@ -101,7 +101,7 @@ if (!$conn->query($sql)) {
 	Afficher($sql);
 	echo "OK";
 	if (!$conn->query("CALL CREER_CLASSEMENT_2011()")) {
-		echo "Echec lors de l'appel à la procédure stockée : (" . $conn->errno . ") " . $conn->error;
+	 echo "Echec lors de l'appel à la procédure stockée : (" . $conn->errno . ") " . $conn->error;
 	}else{
 	   $sql3 = 'SELECT * FROM TDF_CLASSEMENT_2011';
 		$reponse2 = $conn->query($sql3);

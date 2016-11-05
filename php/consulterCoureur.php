@@ -1,7 +1,6 @@
 <?php
     $pwd='../';
     include("includes/header.php");
-    include('fonction_oracle.php');
 ?>
 
 
@@ -15,13 +14,6 @@
 
 <body>
  <div id="contenu" >
-
-     <?php
-        $session = "ETU2_51";
-        $mdp = "ETU2_51";
-        $instance = "oci:dbname=info;charset=latin1";
-        $conn = ConnecterPDO($instance,$session,$mdp);
-    ?>
 
        <form method="get" name="form" id="form" action="<?=$_SERVER['PHP_SELF']?>">
         <fieldset><legend>Fitlre</legend>
@@ -60,6 +52,5 @@
 <?php
     include("includes/footer.php");
 ?>
-
 </body>
 </html>

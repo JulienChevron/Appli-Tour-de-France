@@ -1,7 +1,6 @@
 <?php
 
 function enleverTiretDebut($str){
-	//$str = enleverEspaces($str);
 	$PremierCaractere = substr($str,0,1);
 
 	while (strcmp($PremierCaractere, "-")==0) {
@@ -12,7 +11,6 @@ function enleverTiretDebut($str){
 }
 
 function enleverTiretFin($str){
-	//$str = enleverToutEspaces($str);
 	$DernierCaractere = substr($str,-1,1);
 
 	while (strcmp($DernierCaractere, "-")==0) {

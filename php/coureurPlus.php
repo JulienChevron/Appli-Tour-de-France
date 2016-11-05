@@ -1,7 +1,6 @@
 <?php
     $pwd='../';
     include("includes/header.php");
-    include('fonction_oracle.php');
 ?>
 
 
@@ -15,13 +14,6 @@
 
 <body>
  <div id="contenu" >
-
-     <?php
-        $session = "ETU2_51";
-        $mdp = "ETU2_51";
-        $instance = "oci:dbname=info;charset=latin1";
-        $conn = ConnecterPDO($instance,$session,$mdp);
-    ?>
 
     <?php
       if(isset($_GET['ncoureur']) && isset($_GET['nom']) && isset($_GET['prenom']) && isset($_GET['codetdf'])  && isset($_GET['naiss'])  && isset($_GET['anneetdf'])){

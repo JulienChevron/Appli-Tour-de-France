@@ -1,21 +1,14 @@
 <?php
     $pwd='../';
     include("includes/header.php");
-    include('fonction_oracle.php');
+
+    if(isset($_POST['Envoyer'])){
+        include('ajoutSponsorFonc.php');
+    }
 ?>
 
  <div id="contenu" >
 
-     <?php
-        $session = "ETU2_51";
-        $mdp = "ETU2_51";
-        $instance = "oci:dbname=info";
-        $conn = ConnecterPDO($instance,$session,$mdp);
-
-        if(isset($_POST['Envoyer'])){
-            include('ajoutSponsorFonc.php');
-        }
-    ?>
     <h2>Ajouter un sponsor</h2>
     <form method="post" name="form" id="form" onsubmit="return valider(this);">
         <label class="form_col" for="n_equipe">Numéro de l'équipe :</label>

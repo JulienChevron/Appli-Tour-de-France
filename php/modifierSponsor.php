@@ -1,13 +1,6 @@
 <?php
     $pwd='../';
     include("includes/header.php");
-	include('fonction_oracle.php');
-          
-    $session = "ETU2_51";
-    $mdp = "ETU2_51";
-    $instance = "oci:dbname=info";
-    $conn = ConnecterPDO($instance,$session,$mdp);
-
 
 	if(isset($_GET['nequipe']) && isset($_GET['nsponsor']) && isset($_GET['nom']) && isset($_GET['nasponsor'])  && isset($_GET['codetdf'])  && isset($_GET['anneesponsor'])){
 		$nequipe = $_GET['nequipe'];
@@ -21,9 +14,7 @@
 	if(isset($_POST['Envoyer'])){
         include('modifierSponsorFonc.php'); 
     }
-
 ?>
-
 	<div id="contenu" >
 	  <form method="post" name="form" id="form" onsubmit="return valider(this);">
 	  	<input type="hidden" name="nsponsor" id="nsponsor" value="<?php echo $nsponsor; ?>"/></br>
@@ -39,7 +30,6 @@
                     selectCodetdf($conn);
                 ?>
             </select>
-            <!--<span class="tooltip">Veillez remplir un code TDF</span>-->
             </br>
            </br></br>
         <input type="submit" name="Envoyer" id="Envoyer"/>

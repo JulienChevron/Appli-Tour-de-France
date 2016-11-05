@@ -50,5 +50,4 @@ function formaterNom($str){
 		return "?";
 	}
 }
-
 ?>

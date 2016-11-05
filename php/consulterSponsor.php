@@ -1,19 +1,10 @@
 <?php
     $pwd='../';
     include("includes/header.php");
-    include('fonction_oracle.php');
 ?>
 
  <div id="contenu" >
-
-     <?php
-        $session = "ETU2_51";
-        $mdp = "ETU2_51";
-        $instance = "oci:dbname=info";
-        $conn = ConnecterPDO($instance,$session,$mdp);
-    ?>
-
-       <form method="get" name="form" id="form" action="<?=$_SERVER['PHP_SELF']?>">
+    <form method="get" name="form" id="form" action="<?=$_SERVER['PHP_SELF']?>">
         <label class="form_col" for="recherche">Recherche :</label>
         <input type="text" name="recherche" id="recherche"/></br>
         <label class="form_col" for="annee_prem">Année de premier tour :</label>
