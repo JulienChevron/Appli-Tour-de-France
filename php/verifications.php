@@ -14,7 +14,7 @@ function verifierReste($str){
     return preg_match($regex, $str);
 }
 function verifierTaille($str){
-    if(strlen($str)>18){
+    if(strlen($str)>30){
         return false;
     }else{
         return true;

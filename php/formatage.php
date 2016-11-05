@@ -7,7 +7,7 @@ include('gestionCaracteres.php');
 
 
 function formaterPrenom($str){
-	if(verifierFrancais($str) && verifierTaille($str)){
+	if(verifierFrancais($str)){
 		$str = enleverEspaces($str);
 		$str = unTiretMax($str);
 		$str = unApostropheMax($str);
@@ -18,7 +18,7 @@ function formaterPrenom($str){
 		$str = majusculesPrenom($str);
 		$str = enleverEspacesInutiles($str);
 		$str = utf8_decode($str);
-		if (verifierReste($str)){
+		if (verifierReste($str) && verifierTaille($str)){
 			return $str;
 		}else{
 			return "?";
@@ -29,7 +29,7 @@ function formaterPrenom($str){
 }
 
 function formaterNom($str){
-	if(verifierFrancais($str) && verifierTaille($str)){
+	if(verifierFrancais($str)){
 		$str = enleverEspaces($str);
 		$str = deuxTiretMax($str);
 		$str = unApostropheMax($str);
@@ -41,7 +41,7 @@ function formaterNom($str){
 		$str = majuscule($str);
 		$str = enleverEspacesInutiles($str);
 		$str = utf8_decode($str);
-		if (verifierReste($str)){
+		if (verifierReste($str) && verifierTaille($str)){
 			return $str;
 		}else{
 			return "?";

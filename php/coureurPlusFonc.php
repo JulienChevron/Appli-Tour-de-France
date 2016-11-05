@@ -16,9 +16,7 @@
                 if (count($valeur) != 0){
                     echo $i;
                     $sql = "SELECT * FROM TDF_CLASSEMENT_" . $i . " WHERE N_COUREUR = " . $ncoureur;
-                    Afficher($sql);
                     $reponse = $bdd->query($sql);
-                    Afficher($reponse);
                     while ($donnees = $reponse->fetch())
                     {   
                         $annee = $donnees['ANNEE'];
