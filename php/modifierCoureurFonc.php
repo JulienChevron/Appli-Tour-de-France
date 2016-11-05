@@ -22,8 +22,6 @@
             $ncoureur2 = $_POST['ncoureur'];
         }
         if (isset($_POST['prenom']) && isset($_POST['nom']) && isset($_POST['code_tdf']) && isset($_POST['ncoureur']) && ( strcmp($nom2,"?") != 0 && strcmp($prenom2,"?") != 0)){
-            Afficher($nom2);
-            Afficher($prenom2);
 
             $nom2 = ApostropheInsert($nom2);
             $prenom2 = ApostropheInsert($prenom2);            
@@ -40,9 +38,8 @@
                 echo "Courreur modifié :\n";
             }catch(PDOException $e){
                 $conn->rollBack();
-                //die ($e->getMessage() . "\nErreur lors de l'ajout du courreur");
                 echo $e->getCode();
-                echo "Erreur lors de la modification du courreur";
+                echo "Modification du coureur impossible";
             }
         }else{
             echo "Modification du courreur impossible : Nom et/ou prénom non conforme(s)\n";

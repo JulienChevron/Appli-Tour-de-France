@@ -95,7 +95,7 @@ function AfficherDonnee($tab)
 
 //---------------------------------------------------------------------------------------------
 function selectCodetdf($bdd){
-            $sql = "SELECT CODE_TDF, NOM from TDF_PAYS";
+            $sql = "SELECT CODE_TDF, NOM from TDF_PAYS ORDER BY NOM";
             $reponse = $bdd->query($sql);
             echo "<option value=''>Selectionnez un pays</option>";
            	foreach($reponse as $ligne)
