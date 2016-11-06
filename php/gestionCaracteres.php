@@ -56,7 +56,7 @@ function enleverAccentsMin($str){
     $str = preg_replace('#^è|é|ê|ë$#', 'e', $str);
     $str = preg_replace('#à|á|â|ã|ä|å#', 'a', $str);
     $str = preg_replace('#ì|í|î|ï#', 'i', $str);
-    $str = preg_replace('#ð|ò|ó|ô|õ|ö|ø#', 'o', $str);
+    $str = preg_replace('#ð|ò|ó|ô|õ|ö#', 'o', $str);
     $str = preg_replace('#ù|ú|û|ü#', 'u', $str);
     $str = preg_replace('#ý|ÿ#', 'y', $str);
     
@@ -84,6 +84,7 @@ function enleverCaracteresSpeciaux($str){
     $str = preg_replace('#Æ#', 'AE', $str);
     $str = preg_replace('#ñ#', 'n', $str);
     $str = preg_replace('#Ñ#', 'N', $str);
+    $str = preg_replace('#ø#', 'o', $str);
      
     return ($str);
 }

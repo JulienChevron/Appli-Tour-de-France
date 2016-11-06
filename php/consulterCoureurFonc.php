@@ -13,12 +13,12 @@ function afficherCoureur($bdd){
         echo '<table class="table table-condensed" id="table"><thead> <tr> <th>Numero</th> <th>Prenom</th> <th>Nom</th> <th>Code TDF</th> <th>Année de naissance</th><th>Année premier tour</th>';
         while ($donnees = $reponse->fetch())
         {   
-            $num = utf8_encode($donnees['N_COUREUR']);
-            $codetdf = utf8_encode($donnees['CODE_TDF']);
-            $nom = utf8_encode($donnees['NOM']);
+            $num = $donnees['N_COUREUR'];
+            $codetdf = $donnees['CODE_TDF'];
+            $nom = $donnees['NOM'];
             $prenom = utf8_encode($donnees['PRENOM']);
-            $naiss = utf8_encode($donnees['ANNEE_NAISSANCE']);
-            $anneetdf = utf8_encode($donnees['ANNEE_PREM']);
+            $naiss = $donnees['ANNEE_NAISSANCE'];
+            $anneetdf = $donnees['ANNEE_PREM'];
             echo '<tr id="ligne"><td>' . $num . '</td><td>' . $prenom . '</td><td>' . $nom . '</td><td>' . $codetdf . '</td><td>' . $naiss . '</td><td>'. $anneetdf . '</td><td><a href="supprimerCoureur.php?ncoureur=' . $num . '&nom=' . $nom . '&prenom=' . $prenom . '">Supprimer</a></td></td><td><a href="modifierCoureur.php?ncoureur=' . $num . '&nom=' . $nom . '&prenom=' . $prenom . '&naiss=' . $naiss . '&anneetdf=' . $anneetdf . '&codetdf=' . $codetdf . '">Modifier</a></td><td><a href="coureurPlus.php?ncoureur=' . $num . '&nom=' . $nom . '&prenom=' . $prenom . '&naiss=' . $naiss . '&anneetdf=' . $anneetdf . '&codetdf=' . $codetdf . '">Plus</a></td></tr>';
         }
         echo '</table>';

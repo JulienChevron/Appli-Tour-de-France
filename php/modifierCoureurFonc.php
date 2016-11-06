@@ -38,8 +38,10 @@
                 echo "Courreur modifié :\n";
             }catch(PDOException $e){
                 $conn->rollBack();
-                echo $e->getCode();
-                echo "Modification du coureur impossible";
+                if($e->getCode() == 'HY000')
+                    echo "Courreur déjà existant, modification impossible !";
+                else
+                    echo "Modification du coureur impossible !";
             }
         }else{
             echo "Modification du courreur impossible : Nom et/ou prénom non conforme(s)\n";

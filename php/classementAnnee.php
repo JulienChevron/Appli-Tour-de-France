@@ -14,19 +14,7 @@
 
 <body>
  <div id="contenu" >
-
-     <?php
-    
-        include('fonction_oracle.php');
-          
-        $session = "ETU2_51";
-        $mdp = "ETU2_51";
-        $instance = "oci:dbname=info;charset=latin1";
-        $conn = ConnecterPDO($instance,$session,$mdp);
-    ?>
-
-
-
+ <fieldset><legend>Selectionnez une année</legend>
     <form method="get" name="form" id="form" action="<?=$_SERVER['PHP_SELF']?>">
         <label class="form_col" for="annee">Année :</label>
             <select name="annee" id="annee">
@@ -34,9 +22,9 @@
                     selectAnneeCoureur($conn);
                 ?>
             </select>
-            </br></br></br>
         <input type="submit" name="Envoyer" id="Envoyer"/>
     </form>
+    </fieldset>
 
 
     <?php
@@ -54,10 +42,17 @@
                     {   
                         $num = $donnees['N_COUREUR'];
                         $nom = $donnees['NOM'];
-                        $prenom = $donnees['PRENOM'];
+                        $prenom = utf8_encode($donnees['PRENOM']);
                         $class = $donnees['CLASSEMENT'];
-                        $tps = $donnees['TEMPS_TOTAL']/60;
-                        echo '<tr id="ligne"><td>' . $num . '</td><td>' . $nom . '</td><td>' . $prenom . '</td><td>' . $class . '</td><td>' . $tps . '</td></tr>';
+                        $time = (($donnees['TEMPS_TOTAL']/60)/60);
+                        $nb = explode('.', $time);
+                        $heures = $nb[0];
+                        $time = (($time-$heures) * 60);
+                        $nb = explode('.', $time);
+                        $minutes = $nb[0];
+                        $time = $time = (($time-$minutes) * 60);
+                        $secondes = round($time, 0, PHP_ROUND_HALF_EVEN);
+                        echo '<tr id="ligne"><td>' . $num . '</td><td>' . $nom . '</td><td>' . $prenom . '</td><td>' . $class . '</td><td>' . $heures . 'h' . $minutes . 'm' . $secondes . 's</td></tr>';
                     }
                     $reponse->closeCursor();
             }catch(PDOException $e){

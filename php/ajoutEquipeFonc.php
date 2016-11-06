@@ -32,8 +32,10 @@
             echo "numéro " .$n_equipe . ", de sponsor numéro" . $n_sponsor . ", avec les directeurs " . $n_pre_directeur . " et ".$n_co_directeur. ", participant pour la première fois en " . $annee; 
         }catch(PDOException $e){
             $conn->rollBack();
-            die ($e->getMessage() . "\nErreur lors de l'ajout de l'équipe");
-            echo "Erreur lors de l'ajout de l'équipe";
+            if($e->getCode() == 'HY000')
+                echo "Coureur déjà existant, ajout impossible";
+            else
+                echo "Erreur lors de l'ajout de l'équipe";
         }
     }else{
         echo "Ajout de l'équipe impossible :\n";

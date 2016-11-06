@@ -118,6 +118,31 @@ function selectAnneeCoureur($bdd){
             	
         }
 //---------------------------------------------------------------------------------------------
+function selectEpreuve($bdd,$annee){
+            $sql = "SELECT ANNEE, N_EPREUVE, VILLE_A, VILLE_D, JOUR FROM TDF_EPREUVE WHERE ANNEE = " .$annee;
+            $reponse = $bdd->query($sql);
+            foreach($reponse as $ligne)
+            {   
+                $num = $ligne['N_EPREUVE'];
+                $arrivee = $ligne['VILLE_A'];
+                $depart = $ligne['VILLE_D'];
+                $date = $ligne['JOUR'];
+                echo "<option value='" . $num . "'>" . $num . " | " . $depart . " => " . $arrivee . "</option>";
+            }
+              
+        }
+//---------------------------------------------------------------------------------------------
+function selectCatEpreuve($bdd){
+            $sql = "SELECT DISTINCT CAT_CODE from TDF_EPREUVE ORDER BY CAT_CODE";
+            $reponse = $bdd->query($sql);
+            echo "<option value=''>Selectionnez une catégorie</option>";
+            foreach($reponse as $ligne)
+            {   
+                echo "<option value='" . $ligne['CAT_CODE'] . "'>" . $ligne['CAT_CODE'] . "</option>";
+            }
+              
+        }
+//---------------------------------------------------------------------------------------------
 function Afficher($obj)
 {
 	echo "<pre><hr/>";

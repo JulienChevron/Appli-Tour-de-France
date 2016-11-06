@@ -27,10 +27,7 @@
         echo '<h1>Coureur numéro ' . $ncoureur . " : <strong>" . $prenom . " " . $nom . '  </strong>(' . $codetdf . ')</h1>';
 
         include('coureurPlusFonc.php');
-        echo '<h2>Palmares</h2>';
-        afficherPalmares($conn,$prem,$ncoureur);
-        echo '<h2>Liste des équipes</h2>';
-        afficherEquipes($conn,$ncoureur);
+        afficherInfoCoureur($conn,$prem,$ncoureur);
     }
     ?>
 </div>

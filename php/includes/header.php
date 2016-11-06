@@ -68,6 +68,9 @@
                             <li><a href="../php/ajoutCoureur.php">Ajouter un coureur</a></li>
                             <li><a href="../php/ajoutSponsor.php">Ajouter un sponsor</a></li>
                             <li><a href="../php/ajoutEquipe.php">Ajouter une équipe</a></li> 
+                            <li><a href="../php/ajoutAnnee.php">Ajouter une année</a></li>
+                            <li><a href="../php/ajoutPays.php">Ajouter un pays</a></li> 
+                            <li><a href="../php/ajoutEpreuve.php">Ajouter une epreuve</a></li>  
                         </ul>
                         </li>
                         <li class="dropdown">
@@ -76,6 +79,14 @@
                         <ul class="dropdown-menu">
                             <li><a href="../php/consulterCoureur.php">Consulter les coureurs</a></li>
                             <li><a href="../php/consulterSponsor.php">Consulter les sponsors</a></li>
+                        </ul>
+                        </li>
+                        <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Classements
+                        <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../php/classementAnnee.php">Classements généraux</a></li>
+                            <li><a href="../php/classementEtapes.php">Classements d'étapes</a></li>
                         </ul>
                         </li>
                     </ul>

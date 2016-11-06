@@ -29,8 +29,6 @@
         $sql = "INSERT INTO TDF_COUREUR (N_COUREUR, NOM, PRENOM, ANNEE_NAISSANCE, CODE_TDF, ANNEE_PREM, COMPTE_ORACLE, DATE_INSERT)
                 values ((".$n_coureur."), '".$nom."', '".$prenom."', '".$annee_naiss."', '".$code_tdf."', '".$annee_prem."', USER , sysdate)";
             
-
-        Afficher($sql);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $conn->setAttribute(PDO::ATTR_AUTOCOMMIT, FALSE);
         $conn->beginTransaction();
@@ -38,12 +36,19 @@
             $cur = preparerRequete($conn,$sql);
             $res = majDonneesPreparees($cur);
             $conn->commit();
+            $msg = utf8_encode($prenom) . " " . utf8_encode($nom) . " de nationnalité : " . $code_tdf;;
+            if($annee_naiss != '')
+                $msg = $msg . " né en " . $annee_naiss;
+            if($annee_prem != '')
+                $msg = $msg . " participant pour la première fois en " . $annee_prem;
             echo "Courreur suivant ajouté :\n";
-            echo utf8_encode($prenom) . " " . utf8_encode($nom) . " né en " . $annee_naiss . " participant pour la première fois en " . $annee_prem . "  et de nationnalité : " . $code_tdf; 
+            echo $msg;
         }catch(PDOException $e){
             $conn->rollBack();
-            //die ($e->getMessage() . "\nErreur lors de l'ajout du courreur");
-            echo "Erreur lors de l'ajout du courreur";
+             if($e->getCode() == 'HY000')
+                echo "Courreur déjà existant, ajout impossible !";
+            else
+                echo "Ajout du coureur impossible !";
         }
     }else{
         echo "Ajout du courreur impossible : Nom et/ou prénom non conforme(s)\n";
