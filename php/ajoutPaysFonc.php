@@ -33,6 +33,7 @@
                 echo "Ajout du pays impossible";
         }
     }else{
+        //sauvegarde des champs en cas de champs non conformes
         echo "Ajout du pays impossible, les champs sont incorrects\n";
         $savePays = $_POST['pays'];
         $saveCode = $_POST['codetdf'];

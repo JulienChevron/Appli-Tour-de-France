@@ -43,6 +43,7 @@
                 echo "Erreur lors de l'ajout du sponsor";
             }
         }else{
+            //sauvegarde des champs en cas de champs non conformes
             echo "Ajout du sponsor impossible : Nom et/ou prénom non conforme(s)\n";
             $saveNomSponsor = $_POST['nom'];
             $saveNaSponsor = $_POST['na_sponsor'];

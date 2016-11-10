@@ -20,6 +20,8 @@
         <label class="form_col" for="annee">Année :</label>
             <select name="annee" id="annee">
                 <?php 
+                    if(isset($_GET['annee'])) //sauvegarde de l'année dans la liste
+                        echo '<option value="'.$_GET['annee'].'">'.$_GET['annee'].'</option>';
                     selectAnneeCoureur($conn);
                 ?>
             </select>
@@ -40,7 +42,7 @@
         <label class="form_col" for="epreuve">Année :</label>
             <input type="hidden" name="annee" id="annee" value="<?php echo $annee;?>"/>
             <select name="epreuve" id="epreuve">
-                <?php 
+                <?php
                     selectEpreuve($conn,$annee);
                 ?>
             </select>

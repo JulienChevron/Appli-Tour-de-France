@@ -19,6 +19,8 @@
         <label class="form_col" for="annee">Année :</label>
             <select name="annee" id="annee">
                 <?php 
+                	if(isset($_GET['annee'])) //sauvegarde de l'année dans la liste
+                        echo '<option value="'.$_GET['annee'].'">'.$_GET['annee'].'</option>';
                     selectAnneeCoureur($conn);
                 ?>
             </select>
@@ -44,6 +46,7 @@
                         $nom = $donnees['NOM'];
                         $prenom = utf8_encode($donnees['PRENOM']);
                         $class = $donnees['CLASSEMENT'];
+                        //transformation du temps en format Heures/Minutes/Secondes
                         $time = (($donnees['TEMPS_TOTAL']/60)/60);
                         $nb = explode('.', $time);
                         $heures = $nb[0];

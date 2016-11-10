@@ -1,4 +1,7 @@
 <?php
+
+    ¨//Page non fonctionnelle
+
     $pwd='../';
     include("includes/header.php");
 

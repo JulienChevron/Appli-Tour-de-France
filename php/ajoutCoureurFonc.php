@@ -51,6 +51,7 @@
                 echo "Ajout du coureur impossible !";
         }
     }else{
+    	//sauvegarde des champs en cas de champs non conformes
         echo "Ajout du courreur impossible : Nom et/ou prénom non conforme(s)\n";
         $saveNom = $_POST['nom'];
         $savePrenom = $_POST['prenom'];

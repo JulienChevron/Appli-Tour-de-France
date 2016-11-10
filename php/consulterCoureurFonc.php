@@ -2,6 +2,7 @@
 
 function afficherCoureur($bdd){
 
+        //vérification si un filtre est appliqué
         if(isset($_GET["nom"]) && isset($_GET["prenom"]) && isset($_GET["annee_prem"]) && isset($_GET["annee_naiss"]) && isset($_GET["code_tdf"])){
             $sql = requeteFiltre($_GET["nom"],$_GET["prenom"], $_GET["annee_prem"], $_GET["annee_naiss"], $_GET["code_tdf"]);
         }else{
@@ -26,6 +27,7 @@ function afficherCoureur($bdd){
         
     }
 
+//fonction crééant la requète de seletion des coureurs avec un filtre
 function requeteFiltre($nom,$prenom,$prem,$naiss,$tdf){
     $cpt = 0;
     $sql = "SELECT * FROM TDF_COUREUR ";

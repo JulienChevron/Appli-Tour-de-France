@@ -37,6 +37,7 @@
     </form>
 
     <?php
+        //Affichage du résultat de la suppression
         if(isset($_GET['supp'])){
             if(strcmp($_GET['supp'],'ok')==0)
                 echo "Coureur supprimé";

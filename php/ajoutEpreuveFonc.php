@@ -1,5 +1,7 @@
 <?php
 
+	//Page non fonctionnelle
+
     include('formatage.php');
 
     if(isset($_POST['annee'])){

@@ -16,6 +16,7 @@
  <div id="contenu" >
 
     <?php
+        //récupération des données du coureur
       if(isset($_GET['ncoureur']) && isset($_GET['nom']) && isset($_GET['prenom']) && isset($_GET['codetdf'])  && isset($_GET['naiss'])  && isset($_GET['anneetdf'])){
         $ncoureur = $_GET['ncoureur'];
         $nom = $_GET['nom'];

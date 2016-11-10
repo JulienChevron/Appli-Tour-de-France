@@ -1,9 +1,11 @@
 <?php
 
     function afficherInfoCoureur($bdd,$prem,$ncoureur){
-        $sqlV = "SELECT N_COUREUR, ANNEE FROM TDF_PARTI_COUREUR WHERE N_COUREUR = " . $ncoureur;
-        $reponse = $bdd->query($sqlV);
+        //requête verifiant si le coureur a déjà participé au tour
+        $sql = "SELECT N_COUREUR, ANNEE FROM TDF_PARTI_COUREUR WHERE N_COUREUR = " . $ncoureur;
+        $reponse = $bdd->query($sql);
         $valeur = $reponse->fetchAll();
+        //vérification du nombre de lignes retournées
         if (count($valeur) != 0){   
             echo '<h2>Palmares</h2>';
             afficherPalmares($bdd,$prem,$ncoureur);

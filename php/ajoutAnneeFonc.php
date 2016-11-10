@@ -28,6 +28,7 @@
                 echo "Ajout de l'année impossible";
         }
     }else{
+        //sauvegarde des champs remplis en cas de champs non coformes
         echo "Ajout du courreur impossible : Nom et/ou prénom non conforme(s)\n";
         $saveAnnee = $_POST['annee'];
         $saveRepos = $_POST['repos'];
