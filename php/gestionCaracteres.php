@@ -1,4 +1,5 @@
 <?php
+//GEstion des caractères interdits ou à modifier
 
 function majuscule($str){
 	$maj = mb_strtoupper($str,"UTF-8");

@@ -1,4 +1,5 @@
 <?php
+//Suppression des caractètes interdits 
 
 function enleverTiretDebut($str){
 	$PremierCaractere = substr($str,0,1);

@@ -16,6 +16,7 @@
     </head>
 
 <body>
+<!-- Formulaire d'ajout d'un coureur -->
 <div id="contenu" >
     <h2>Ajouter un coureur</h2>
     <form method="post" name="form" id="form" onsubmit="return valider(this);">
@@ -28,6 +29,7 @@
         <label class="form_col" for="annee_prem">Année de premier tour :</label>
         <input type="number" name="annee_prem" id="annee_prem" min="1900" max="2016" value="<?php if(isset($saveAnnee_prem)) echo $saveAnnee_prem; ?>"/></br>
         <label class="form_col" for="code_tdf">Nationalité :</label>
+        <!-- Récupération des code TDF dans la fonction selectCodeTdf() -->
             <select name="code_tdf" id="code_tdf">
                 <?php 
                     selectCodetdf($conn);

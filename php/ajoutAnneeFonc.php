@@ -1,11 +1,13 @@
 <?php
-
+    //Test si les valeurs sont enrées
     if(isset($_POST['annee'])){
         $annee = $_POST['annee'];
     }
     if (isset($_POST['repos'])){
         $repos = $_POST['repos'];
     }
+    
+    //Execution de la requête
     if (isset($_POST['annee']) && isset($_POST['repos'])){
         
         

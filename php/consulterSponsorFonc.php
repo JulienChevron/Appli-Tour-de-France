@@ -5,7 +5,7 @@ function afficherSponsor($bdd){
         $sql = 'SELECT * FROM TDF_SPONSOR ORDER BY N_SPONSOR DESC';
         $reponse = $bdd->query($sql);
        
-        echo '<table class="table table-condensed" id="table"><thead> <tr> <th>Equipe</th> <th>Sponsor</th> <th>Nom</th> <th>Nom abrégé</th> <th>Nationalité</th><th>Année premier tour</th>';
+        echo'<table class="table table-condensed" id="table"><thead> <tr> <th>Equipe</th> <th>Sponsor</th> <th>Nom</th> <th>Nom abrégé</th> <th>Nationalité</th><th>Année premier tour</th>';
         while ($donnees = $reponse->fetch())
         {   
             $nequipe = $donnees['N_EQUIPE'];

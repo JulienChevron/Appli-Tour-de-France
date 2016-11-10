@@ -2,6 +2,7 @@
     $pwd='../';
     include("includes/header.php");
 
+    // Pour traiter l'ajout et récupérer les données
     if(isset($_POST['Envoyer'])){
         include('ajoutAnneeFonc.php');
     }
@@ -16,6 +17,7 @@
     </head>
 
 <body>
+<!-- Formulaire d'ajout d'une année-->
 <div id="contenu" >
     <h2>Ajouter une année</h2>
     <form method="post" name="form" id="form" onsubmit="return valider(this);">

@@ -30,7 +30,6 @@
 
 
     <?php
-
     if(isset($_GET['annee'])){
         $annee = $_GET['annee'];
 

@@ -16,7 +16,6 @@
     <script src="<?php echo $pwd; ?>js/jquery.min.js"></script>
     <script src="<?php echo $pwd; ?>js/bootstrap.min.js"></script>
 	<link rel="SHORTCUT ICON" href="<?php echo $pwd; ?>image/logoTDF.png" />
-
 </head>
 
 <header>
@@ -28,7 +27,7 @@
 
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
 
-            <!-- Wrapper for slides -->
+            <!-- Slides avec photos -->
             <div class="carousel-inner" role="listbox">
                 <div class="item active">
                     <div class="carousel-page">
@@ -55,6 +54,7 @@
 			</div>
             </div>
 
+            <!-- Barre de navigation avec les onglets -->
             <nav class="navbar navbar-inverse" role="navigation">
                 <div id="menu" class="container-fluid">
                     <div class="navbar-header">
@@ -92,5 +92,4 @@
                     </ul>
                 </div>
             </nav>
-
 		<div id="body-conteneur">

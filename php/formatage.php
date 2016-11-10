@@ -1,11 +1,11 @@
 <?php
-
+//Page pour formater le texte saisi (le rend conforme pour la bdd)
 include('retraitChar.php');
 include('verifications.php');
 include('formatageChaine.php');
 include('gestionCaracteres.php');
 
-
+//Appel de toutes les fonctions nécessaires pour formater le prénom
 function formaterPrenom($str){
 	if(verifierFrancais($str)){
 		$str = enleverEspaces($str);
@@ -27,7 +27,7 @@ function formaterPrenom($str){
 		return "?";
 	}
 }
-
+//Appel de toutes les fonctions nécessaires pour formater le nom
 function formaterNom($str){
 	if(verifierFrancais($str)){
 		$str = enleverEspaces($str);

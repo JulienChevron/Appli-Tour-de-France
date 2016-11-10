@@ -1,7 +1,8 @@
 <?php
-
+    //Permet de modifier les chaines de caractères
     include('formatage.php');
 
+    //Vérifications que les données ont été envoyées
     if(isset($_POST['prenom']) && isset($_POST['nom'])){
         $nom = $_POST['nom'];
         $prenom = $_POST['prenom'];
@@ -21,11 +22,14 @@
     if (isset($_POST['code_tdf'])){
         $code_tdf = $_POST['code_tdf'];
     }
+    //Vérifications + execution de la requête
     if (isset($_POST['prenom']) && isset($_POST['nom']) && isset($_POST['code_tdf']) && isset($_POST['Envoyer']) && ( strcmp($nom,"?") != 0 && strcmp($prenom,"?") != 0)){
         $n_coureur = "select max(n_coureur)+1 from TDF_COUREUR";
+        //Apostrophe insert permet de doubler les apostrophes 
         $nom = ApostropheInsert($nom);
         $prenom = ApostropheInsert($prenom);
         
+        //Requête d'ajout
         $sql = "INSERT INTO TDF_COUREUR (N_COUREUR, NOM, PRENOM, ANNEE_NAISSANCE, CODE_TDF, ANNEE_PREM, COMPTE_ORACLE, DATE_INSERT)
                 values ((".$n_coureur."), '".$nom."', '".$prenom."', '".$annee_naiss."', '".$code_tdf."', '".$annee_prem."', USER , sysdate)";
             
